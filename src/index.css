@@ -1,1 +1,6 @@
 @import "tailwindcss";
+
+@theme{
+    --spacing-container: 1680px; 
+    --font-DM:"DM Sans"
+}
