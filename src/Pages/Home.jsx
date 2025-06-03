@@ -3,6 +3,7 @@ import Navbar from '../Component/Navbar'
 import TopBar from '../Layout/TopBar'
 import Banner from '../Layout/Banner'
 import Information from '../Layout/Information'
+import Ads from '../Layout/Ads'
 
 const Home = () => {
   return (
@@ -11,6 +12,7 @@ const Home = () => {
       <TopBar/>
       <Banner/>
       <Information/>
+      <Ads/>
     </div>
   )
 }

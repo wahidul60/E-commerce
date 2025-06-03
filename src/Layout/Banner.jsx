@@ -1,5 +1,4 @@
 import React from 'react'
-import Flex from '../Component/Flex'
 import Image from '../Component/Image'
 import Bannerx from '../assets/Slider.png'
 import Container from '../Component/Container'
