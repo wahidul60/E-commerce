@@ -16,23 +16,26 @@ import NotFound from "./Pages/NotFound";
 const router = createBrowserRouter(
   createRoutesFromElements(
     <>
-      <Route path="/" element={<Home/>} />
-      <Route path="/shop" element={<Shop/>} />  
-      <Route path="/product" element={<Product/>} /> 
-      <Route path="/about" element={<About/>} />
-      <Route path="/contacts" element={<Contacts/>} />
-      <Route path="/login" element={<Login/>} />
-      <Route path = "/signup" element={<Signup/>} />
-      <Route path= "/myaccout" element={<MyAccout/>} />
-      <Route path="/card" element={<Card/>} />     
-      <Route path="/checkout" element={<Checkout/>} />
-      <Route path="/notfound" element={<NotFound/>}/>
+      <Route path="" element={<Rootlayout/>}>
+        <Route path="/" element={<Home/>} />
+        <Route path="shop" element={<Shop/>} />  
+        <Route path="product" element={<Product/>} /> 
+        <Route path="about" element={<About/>} />
+        <Route path="contacts" element={<Contacts/>} />
+        <Route path="login" element={<Login/>} />
+        <Route path ="signup" element={<Signup/>} />
+        <Route path="myaccount" element={<MyAccout/>} />
+        <Route path="card" element={<Card/>} />     
+        <Route path="checkout" element={<Checkout/>} />
+        <Route path="notfound" element={<NotFound/>}/>
+      </Route>
     </>       
   )
 );
 
 
 import React from 'react'
+import Rootlayout from "./Layout/Rootlayout";
 const App = () => {
   return (
     <div>

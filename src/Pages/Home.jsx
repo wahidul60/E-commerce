@@ -8,8 +8,6 @@ import Ads from '../Layout/Ads'
 const Home = () => {
   return (
     <div>
-      <Navbar/>
-      <TopBar/>
       <Banner/>
       <Information/>
       <Ads/>
