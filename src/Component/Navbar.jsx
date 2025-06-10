@@ -15,7 +15,7 @@ const Navbar = () => {
               <Flex>
                 <div className='w-4/12'> <Image src={Logo} /></div>
                 <div className='w-4/12'>
-                    <Flex className='gap-[39px]'>
+                    <Flex className='gap-[39px] w-full justify-center'>
                       <Link to='/'><List text="Home"/></Link>
                       <Link to='shop'><List text="Shop"/></Link>
                       <Link to='about'><List text="About"/></Link>
