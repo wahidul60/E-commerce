@@ -1,19 +1,40 @@
 import React from 'react'
 import Image from './Image'
 import Flex from './Flex'
+import { IoMdHeart} from "react-icons/io";
+import { MdShoppingCart } from "react-icons/md";
+import { TfiReload } from "react-icons/tfi";
+
 
 const Card = ({productName,src,price,text1}) => {
   return (
     <section>
-        <div className='w-[370px] h-[465px] relative'>
+        <div className='w-[370px] relative group overflow-hidden'>
             <Image src={src} className='w-full h-[370px] pb-6 '/>
             <Flex className='justify-between'>
                 <h1 className='font-DM text-[20px] text-[#262626] font-bold pb-4'>{productName}</h1>
                 <h3 className='font-DM text-[16px] text-[#6D6D6D]'>{price}</h3>
             </Flex>
+
             <h3 className='font-DM text-[16px] text-[#6D6D6D]'>Black</h3>
             <div className='bg-black w-[100px] h-[35px] absolute top-[20px] left-[20px] justify-center items-center flex'>
                 <p className='text-white px-2 py-2 font-DM text-[16px] font-bold'>{text1}</p>
+            </div>
+
+            <div className='w-[370px] absolute bg-white group-hover:bg-white/90 opacity-0 group-hover:opacity-100 group-hover:bottom-[92px] duration-500 cursor-pointer '>
+                <ul className='flex flex-col items-end gap-y-4 pr-7 py-7'>
+                  <li className='flex items-center gap-x-3 font-DM text-[16px]'>
+                    Add to Wish List 
+                    <IoMdHeart />
+                  </li>
+                  <li className='flex items-center gap-x-3 font-DM text-[16px]'>
+                    Compare <TfiReload />
+                  </li>
+                  <li className='flex items-center gap-x-3 font-DM text-[16px] font-bold'>
+                    Add to Cart 
+                    <MdShoppingCart />
+                    </li>
+                </ul>
             </div>                
         </div>        
     </section>       
