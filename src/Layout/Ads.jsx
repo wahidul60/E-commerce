@@ -11,10 +11,10 @@ const Ads = () => {
     <section>
         <Container>
             <Flex className='pt-[104px] pb-[128px] justify-between'>
-                <div><Image src={Ad1}/></div>
+                <div><Image src={Ad1} className='cursor-pointer'/></div>
                 <div>
-                    <div className='pb-[30px]'><Image src={Ad2}/></div>
-                    <div><Image src={Ad3}/></div>
+                    <div className='pb-[30px]'><Image src={Ad2} className='cursor-pointer'/></div>
+                    <div><Image src={Ad3} className='cursor-pointer'/></div>
                 </div>
             </Flex>
         </Container>
