@@ -71,29 +71,52 @@ const Product = () => {
               </div>
             </Flex>
             <Flex className='items-center border-b border-[#f0f0f0]'>
-              <SubHeading text='STATUS:' className='pr-5 border-b py-5 border-[#f0f0f0]'/>
-              <p className='text-[#767676]'>In stock</p>
+                <SubHeading text='STATUS:' className='pr-5 border-b py-5 border-[#f0f0f0]'/>
+                <p className='text-[#767676]'>In stock</p>
             </Flex>
             <Flex className = 'gap-x-5 pt-7 pb-7 border-b border-[#f0f0f0]'>
-              <Button text='Add to Wish List' className='hover:bg-white hover:text-black duration-300 hover:border border'/>        
-              <Button text='Add to Cart' className='hover:bg-white hover:text-black duration-300 hover:border border'/>   
+                <Button text='Add to Wish List' className='hover:bg-white hover:text-black duration-300 hover:border border'/>        
+                <Button text='Add to Cart' className='hover:bg-white hover:text-black duration-300 hover:border border'/>   
             </Flex>
             <Flex className='py-7 w-1/2 border-b border-[#f0f0f0] justify-between'>
-              <SubHeading text='FEATURES & DETAILS'/>
-              <span className='font-bold font-DM text-[20px]'>+</span>
+                <SubHeading text='FEATURES & DETAILS'/>
+                <span className='font-bold font-DM text-[20px]'>+</span>
             </Flex>    
              <Flex className='py-7 w-1/2 border-b border-[#f0f0f0] justify-between'>
-              <SubHeading text='SHIPPING & RETURNS'/>
+                <SubHeading text='SHIPPING & RETURNS'/>
               <span className='font-bold font-DM text-[20px]'>+</span>
             </Flex>
-            <p className='font-DM text-[#767676] pb-[123px] w-1/2'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-</p>
-            <Flex className='gap-x-5'>
-              <div><p className='font-DM text-[#767676] text-[20px]'>Description</p></div>
-              <div><p className='font-DM font-bold text-[20px]'>Reviews (1) </p></div>
-              <div></div>
+            <p className='font-DM text-[#767676] pb-[123px] w-1/2'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <Flex className='gap-x-5 pb-10'>
+                <div><p className='font-DM text-[#767676] text-[20px]'>Description</p></div>
+                <div><p className='font-DM font-bold text-[20px]'>Reviews (1) </p></div>
             </Flex>
+            <p className='font-DM text-[#767676] pb-[17px] border-b border-[#f0f0f0] '>1 review for Product</p>
+            <Flex className='gap-x-10 pt-6 pb-4 border-b w-full border-[#f0f0f0]'>
+                <p className='font-DM'>John Ford</p>
+                  <div className='pr-5 pb-5'>
+                    <ul className='flex text-[#FFD881]'>
+                      <li><IoMdStar /></li>
+                      <li><IoMdStar /></li>
+                      <li><IoMdStar /></li>
+                      <li><IoMdStar /></li>
+                      <li><IoMdStar /></li>
+                    </ul>                
+                  </div>
+            </Flex>
+             <p className='font-DM text-[#767676] pb-[15px] pt-4 border-b border-[#f0f0f0]'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+             <SubHeading className='py-13 text-[22px]'  text='Add a Review'/>
+             <label className='pb-4 block border-b border-[#f0f0f0]' htmlFor='name'> <SubHeading  text='Name:'/> 
+                <input className='text-[#767676] font-DM text-[10px] p-1' id='name' placeholder='Enter your name here'></input>
+             </label>
+              
+             <label className='pb-4 block border-b border-[#f0f0f0]' htmlFor='name'> <SubHeading  text='Email:'/> 
+                <input className='text-[#767676] font-DM text-[10px] p-1' id='name' placeholder='Enter your email here'></input>
+             </label> 
 
+             <label className='pb-4 block border-b border-[#f0f0f0]' htmlFor='name'> <SubHeading  text='Review:'/> 
+                <input className='text-[#767676] font-DM text-[10px] p-1' id='name' placeholder='Enter your review here'></input>
+             </label> 
       </Container>
     </section>    
   )
