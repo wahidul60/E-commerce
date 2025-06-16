@@ -17,7 +17,7 @@ const Product = () => {
     <section>   
       <Container>
             <Flex className='gap-x-10 pt-[140px] pb-10'>
-              <div className='w-[1/2]'><Image className='w-full' src={product1}/></div>
+              <div className='w-1/2'><Image className='w-full' src={product1}/></div>
               <div className='w-1/2'><Image className='w-full' src={product2}/></div>
             </Flex>
             <Flex className='gap-x-10 pb-12'>
@@ -92,8 +92,9 @@ const Product = () => {
                 <div><p className='font-DM font-bold text-[20px]'>Reviews (1) </p></div>
             </Flex>
             <p className='font-DM text-[#767676] pb-[17px] border-b border-[#f0f0f0] '>1 review for Product</p>
-            <Flex className='gap-x-10 pt-6 pb-4 border-b w-full border-[#f0f0f0]'>
-                <p className='font-DM'>John Ford</p>
+            <Flex className='pt-6 pb-4 border-b w-full border-[#f0f0f0] justify-between'>
+                <Flex className='gap-x-10'>
+                  <p className='font-DM'>John Ford</p>
                   <div className='pr-5 pb-5'>
                     <ul className='flex text-[#FFD881]'>
                       <li><IoMdStar /></li>
@@ -103,20 +104,24 @@ const Product = () => {
                       <li><IoMdStar /></li>
                     </ul>                
                   </div>
+                </Flex>
+                <p className='font-DM text-[#767676]'>6 months ago</p>
             </Flex>
              <p className='font-DM text-[#767676] pb-[15px] pt-4 border-b border-[#f0f0f0]'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
              <SubHeading className='py-13 text-[22px]'  text='Add a Review'/>
              <label className='pb-4 block border-b border-[#f0f0f0]' htmlFor='name'> <SubHeading  text='Name:'/> 
-                <input className='text-[#767676] font-DM text-[10px] p-1' id='name' placeholder='Enter your name here'></input>
+                <input className='text-[#767676] font-DM text-[10px] p-1 rounded' id='name' placeholder='Enter your name here'></input>
              </label>
               
-             <label className='pb-4 block border-b border-[#f0f0f0]' htmlFor='name'> <SubHeading  text='Email:'/> 
-                <input className='text-[#767676] font-DM text-[10px] p-1' id='name' placeholder='Enter your email here'></input>
+             <label className='pb-4 block border-b border-[#f0f0f0]' htmlFor='email'> <SubHeading  text='Email:'/> 
+                <input className='text-[#767676] font-DM text-[10px] p-1 rounded' id='email' placeholder='Enter your email here'></input>
              </label> 
 
-             <label className='pb-4 block border-b border-[#f0f0f0]' htmlFor='name'> <SubHeading  text='Review:'/> 
-                <input className='text-[#767676] font-DM text-[10px] p-1' id='name' placeholder='Enter your review here'></input>
+             <label className='pb-4 block border-b border-[#f0f0f0]' htmlFor='review'> <SubHeading  text='Review:'/> 
+                <textarea id="review" rows="10" cols="100" className='text-[#767676] font-DM text-[10px] p-1 rounded' placeholder='Enter your review here'></textarea>
              </label> 
+             <div className='pt-4 pb-[341px]'><Button text='Post'/></div>
+             
       </Container>
     </section>    
   )
