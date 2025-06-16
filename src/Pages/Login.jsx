@@ -22,7 +22,7 @@ const Login = () => {
             <input className='text-[#767676] font-DM text-[10px] p-1 rounded' type='email' id='name' placeholder='company@domain.com'></input>
           </label>
           <label className='pb-4 block border-b border-[#f0f0f0] w-1/2' htmlFor='password'> <SubHeading  text='Password:'/> 
-            <input className='text-[#767676] font-DM text-[10px] p-1 rounded' type='password' id='password' placeholder='company@domain.com'></input>
+            <input className='text-[#767676] font-DM text-[10px] p-1 rounded' type='password' id='password' placeholder='type your password'></input>
           </label>
         </Flex>
        <div className='pb-[70px] border-b border-[#f0f0f0]'> <Button className='hover:bg-white hover:text-black hover:border-black border duration-500'  text='Log in'/></div>
