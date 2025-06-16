@@ -8,7 +8,7 @@ import About from "./Pages/About";
 import Contacts from "./Pages/Contacts"
 import Login from "./Pages/Login";
 import Signup from "./Pages/Signup";
-import MyAccout from "./Pages/MyAccout";
+import MyAccount from "./Pages/MyAccount";
 import Card from "./Pages/Card";
 import Checkout from "./Pages/Checkout";
 import NotFound from "./Pages/NotFound";
@@ -24,7 +24,7 @@ const router = createBrowserRouter(
         <Route path="contacts" element={<Contacts/>} />
         <Route path="login" element={<Login/>} />
         <Route path ="signup" element={<Signup/>} />
-        <Route path="myaccount" element={<MyAccout/>} />
+        <Route path="myaccount" element={<MyAccount/>} />
         <Route path="card" element={<Card/>} />     
         <Route path="checkout" element={<Checkout/>} />
         <Route path="notfound" element={<NotFound/>}/>

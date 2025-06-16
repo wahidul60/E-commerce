@@ -6,6 +6,7 @@ import { IoMdSearch } from "react-icons/io";
 import { IoMdContact } from "react-icons/io";
 import { IoMdArrowDropdown } from "react-icons/io";
 import { IoCartOutline } from "react-icons/io5";
+import { Link } from 'react-router-dom';
 
 
 
@@ -26,10 +27,12 @@ const TopBar = () => {
             </div>
             <div className='w-4/16 '>
                 <Flex className=' justify-end gap-5'>
-                    <Flex>
-                        <IoMdContact className='text-black' />
-                        <IoMdArrowDropdown className='text-black' />  
-                    </Flex>
+                   <Link to='login'>
+                        <Flex>
+                            <IoMdContact className='text-black' />
+                            <IoMdArrowDropdown className='text-black' />  
+                        </Flex>
+                    </Link>
                     <IoCartOutline />   
                 </Flex>
                            

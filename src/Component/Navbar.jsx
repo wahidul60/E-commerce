@@ -19,7 +19,7 @@ const Navbar = () => {
                       <Link to='/'><List text="Home"/></Link>
                       <Link to='shop'><List text="Shop"/></Link>
                       <Link to='about'><List text="About"/></Link>
-                      <Link to=''><List text="Contact"/></Link>
+                      <Link to='contacts'><List text="Contact"/></Link>
                       <Link to=''><List text="Journal"/></Link>
                     </Flex>
                 </div>
