@@ -16,10 +16,10 @@ const Navbar = () => {
                 <div className='w-4/12'> <Image src={Logo} /></div>
                 <div className='w-4/12'>
                     <Flex className='gap-[39px] w-full justify-center'>
-                      <Link to='/'><List text="Home"/></Link>
-                      <Link to='shop'><List text="Shop"/></Link>
-                      <Link to='about'><List text="About"/></Link>
-                      <Link to='contacts'><List text="Contact"/></Link>
+                      <Link to='/'><List className='w-1/5' text="Home"/></Link>
+                      <Link to='shop'><List className='w-1/5' text="Shop"/></Link>
+                      <Link to='about'><List className='w-1/5' text="About"/></Link>
+                      <Link to='contacts'><List className='w-1/5' text="Contact"/></Link>
                       <Link to=''><List text="Journal"/></Link>
                     </Flex>
                 </div>

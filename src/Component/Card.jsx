@@ -9,7 +9,7 @@ import { TfiReload } from "react-icons/tfi";
 const Card = ({productName,src,price,text1}) => {
   return (
     <section>
-        <div className='w-[370px] relative group overflow-hidden'>
+        <div className='w-[370px] relative group overflow-hidden hover:scale-[1.03] duration-200'>
             <Image src={src} className='w-full h-[370px] pb-6 '/>
             <Flex className='justify-between'>
                 <h1 className='font-DM text-[20px] text-[#262626] font-bold pb-4'>{productName}</h1>
