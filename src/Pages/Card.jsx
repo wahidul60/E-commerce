@@ -83,8 +83,11 @@ const Cart = () => {
             </Flex>
           </div>
         </div>
-        <Button text='Proceed to Checkout'/>
+       
+       <div className='w-full flex justify-end my-15' ><Button text='Proceed to Checkout'/>  </div>
+        
       </Container>
+    
     </section>
   )
 }
