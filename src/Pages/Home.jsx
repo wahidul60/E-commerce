@@ -21,9 +21,16 @@ import CardImage12 from '../assets/CardImage12.png'
 import Ad4 from '../assets/Ad4.png'
 import Image from '../Component/Image'
 import Button from '../Component/Button'
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
+
+
 
 const Home = () => {
+     
   return (
+    
     <div>
       <Banner/>
       <Information/>
@@ -31,6 +38,7 @@ const Home = () => {
       <Container>
         <Heading text='New Arrivals' className='pb-12'/>        
         <Flex className='gap-x-10 justify-between pb-[118px]'>
+        
           <Card src={CardImage1} productName='Basic Crew Neck Tee' price='$44.00' text1='New' />
           <Card src={CardImage2} productName='Basic Crew Neck Tee' price='$44.00' text1='New'/>
           <Card src={CardImage3} productName='Basic Crew Neck Tee' price='$44.00' text1='New'/>
@@ -63,4 +71,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default Home 
