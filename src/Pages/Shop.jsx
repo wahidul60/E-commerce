@@ -1,14 +1,24 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Container from '../Component/Container'
 import Flex from '../Component/Flex'
 import Heading from '../Component/Heading'
 import Subheading from '../Component/Subheading'
 import { FiPlus } from "react-icons/fi";
+import { useDispatch, useSelector } from 'react-redux'
+import { increment } from '../Slices/CounterSlice'
 
 const Shop = () => {
+  let [count,setCount] = useState(0)
+  let dispatch = useDispatch()
+  let data1 = useSelector((state)=> state.counter.value) 
+  let handleIncrement =()=> {
+    dispatch (increment(1))
+  }
   return (
     <section>
       <Container>
+        <button onClick={handleIncrement}>increment</button>        
+        <p>{data1}</p>
         <Heading text='Products' className='pt-[124px]'/>
         <Flex className='gap-x-2 text-[#767676] font-DM pb-[127px]'>
           <p>Home</p> <span>></span> <p>Products</p>
