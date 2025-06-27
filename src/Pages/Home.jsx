@@ -22,35 +22,59 @@ import Ad4 from '../assets/Ad4.png'
 import Image from '../Component/Image'
 import Button from '../Component/Button'
 import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-
+import PrevArrow from '../Component/PrevArrow'
+import NexArrow from '../Component/NexArrow'
 
 
 const Home = () => {
-     
+        const settings = {
+        dots: false,
+        infinite: true,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        autoplay: true,
+        speed: 5000,
+        autoplaySpeed: 0,
+        cssEase: "linear",        
+  };
+   const Bestsellers = {
+        infinite: true,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        speed: 500,
+        nextArrow : <NexArrow/> ,
+        prevArrow : <PrevArrow />        
+  };
   return (
     
     <div>
       <Banner/>
       <Information/>
       <Ads/>
-      <Container>
-        <Heading text='New Arrivals' className='pb-12'/>        
-        <Flex className='gap-x-10 justify-between pb-[118px]'>
-        
-          <Card src={CardImage1} productName='Basic Crew Neck Tee' price='$44.00' text1='New' />
-          <Card src={CardImage2} productName='Basic Crew Neck Tee' price='$44.00' text1='New'/>
-          <Card src={CardImage3} productName='Basic Crew Neck Tee' price='$44.00' text1='New'/>
-          <Card src={CardImage4} productName='Basic Crew Neck Tee' price='$44.00' text1='New'/>
+      <Container>        
+        <Heading text='New Arrivals' className='pb-12'/>    
+        <div className="slider-container">
+        <Slider {...settings}>
+            <Card src={CardImage1} productName='Basic Crew Neck Tee' price='$44.00' text1='New' />
+            <Card src={CardImage2} productName='Basic Crew Neck Tee' price='$44.00' text1='New'/>
+            <Card src={CardImage3} productName='Basic Crew Neck Tee' price='$44.00' text1='New'/>
+            <Card src={CardImage4} productName='Basic Crew Neck Tee' price='$44.00' text1='New'/>
+            <Card src={CardImage2} productName='Basic Crew Neck Tee' price='$44.00' text1='New'/>
+            <Card src={CardImage3} productName='Basic Crew Neck Tee' price='$44.00' text1='New'/>
+        </Slider>
+        </div>      
+        <Flex className='gap-x-10 justify-between pb-[118px]'>             
         </Flex>
-        <Heading text='Our Bestsellers' className='pb-12'/>
-        <Flex className='gap-x-10 justify-between pb-[118px]'>
-          <Card src={CardImage5} productName='Basic Crew Neck Tee' price='$44.00' text1='New' />
-          <Card src={CardImage6} productName='Basic Crew Neck Tee' price='$44.00' text1='New'/>
-          <Card src={CardImage7} productName='Basic Crew Neck Tee' price='$44.00' text1='New'/>
-          <Card src={CardImage8} productName='Basic Crew Neck Tee' price='$44.00' text1='New'/>
-        </Flex>
+        <Heading text='Our Bestsellers' className='pb-12'/>       
+        <Slider {...Bestsellers} className='pb-[118px]' >     
+            <Card src={CardImage1} productName='Basic Crew Neck Tee' price='$44.00' text1='New' />
+            <Card src={CardImage2} productName='Basic Crew Neck Tee' price='$44.00' text1='New'/>
+            <Card src={CardImage3} productName='Basic Crew Neck Tee' price='$44.00' text1='New'/>
+            <Card src={CardImage4} productName='Basic Crew Neck Tee' price='$44.00' text1='New'/>
+            <Card src={CardImage2} productName='Basic Crew Neck Tee' price='$44.00' text1='New'/>
+            <Card src={CardImage3} productName='Basic Crew Neck Tee' price='$44.00' text1='New'/>
+        </Slider>      
         <div className='relative pb-[128px]'>
           <Image src={Ad4} className='w-[1673px] h-auto'/>
           <div className='absolute top-[61px] left-[700px]'>
