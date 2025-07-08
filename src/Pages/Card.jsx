@@ -7,7 +7,7 @@ import CardImage12 from '../assets/CardImage12.png'
 import { FaMinus, FaPlus } from 'react-icons/fa'
 import Button from '../Component/Button'
 
-const Cart = () => {
+const Card = () => {
   return (
     <section>
       <Container>
@@ -92,4 +92,4 @@ const Cart = () => {
   )
 }
 
-export default Cart
+export default Card
