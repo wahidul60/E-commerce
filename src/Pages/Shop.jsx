@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Container from '../Component/Container'
 import Flex from '../Component/Flex'
 import Heading from '../Component/Heading'
-import Subheading from '../Component/Subheading'
+import SubHeading from '../Component/SubHeading'
 import { FiPlus } from "react-icons/fi";
 import { useDispatch, useSelector } from 'react-redux'
 import { increment } from '../Slices/CounterSlice'
@@ -23,7 +23,7 @@ const Shop = () => {
         <Flex className='gap-x-2 text-[#767676] font-DM pb-[127px]'>
           <p>Home</p> <span>></span> <p>Products</p>
         </Flex>
-        <Subheading text='Shop by Category' className='pb-[35px]'/>
+        <SubHeading text='Shop by Category' className='pb-[35px]'/>
         <Flex className='gap-x-10'>
           <div className='w-3/12'>
             <Flex className='items-center justify-between border-b border-[#f0f0f0]'>
