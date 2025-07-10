@@ -5,21 +5,24 @@ import SubHeading from '../Component/SubHeading'
 import { FiPlus } from "react-icons/fi";
 import { useDispatch, useSelector } from 'react-redux'
 import { increment } from '../Slices/counterSlice'
+import { FaAngleRight } from 'react-icons/fa6';
 
 const Shop = () => {  
   let dispatch = useDispatch()
   let data1 = useSelector((state)=> state.counter.value) 
+  let previousValue = useSelector((state)=> state.active.previousValue) 
+  let currentValue = useSelector((state)=>state.active.currentValue)
   let handleIncrement =()=> {
-    dispatch (increment(1))
-  }
+    dispatch (increment(1))    
+  }  
   return (
     <section>
       <Container>      
         <button onClick={handleIncrement}>increment</button>        
         <p>{data1}</p>
         <Heading text='Products' className='pt-[124px]'/>
-        <Flex className='gap-x-2 text-[#767676] font-DM pb-[127px]'>
-          <p>Home</p> <span>></span> <p>Products</p>
+        <Flex className='gap-x-2 text-[#767676] font-DM pb-[127px] items-center'>
+          <p>{!previousValue || previousValue===currentValue? previousValue="Home":previousValue}</p> <span><FaAngleRight /></span> <p>{currentValue || 'Shop'}</p>
         </Flex>
         <SubHeading text='Shop by Category' className='pb-[35px]'/>
         <Flex className='gap-x-10'>

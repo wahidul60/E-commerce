@@ -4,14 +4,19 @@ import Heading from '../Component/Heading'
 import Flex from '../Component/Flex'
 import SubHeading from '../Component/SubHeading'
 import Button from '../Component/Button'
+import { useSelector } from 'react-redux'
+import { FaAngleRight } from 'react-icons/fa6'
 
 const Contacts = () => {
+  let previousValue = useSelector((state)=>state.active.previousValue)
+  let currentValue = useSelector((state)=> state.active.currentValue)
+
   return (
     <section>
       <Container>
         <Heading className='pt-[124px] pb-3' text='Contacts'/>
-        <Flex className='gap-x-2 text-[#767676] font-DM pb-[125px]'>
-        <p>Home</p> <span>></span> <p>Contact</p>
+        <Flex className='gap-x-2 text-[#767676] font-DM pb-[125px] items-center'>
+        <p> {!previousValue || previousValue === currentValue? previousValue="Home" : previousValue } </p> <span><FaAngleRight/></span> <p>{currentValue || 'Contact' }</p>
         </Flex>
         <Heading text='Fill up a Form' className='pb-10'/>
          <label className='pb-4 block border-b border-[#f0f0f0] w-1/2' htmlFor='name'> <SubHeading  text='Name:'/> 
