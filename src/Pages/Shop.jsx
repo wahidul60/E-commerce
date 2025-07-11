@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { increment } from '../Slices/counterSlice'
 import { FaAngleRight } from 'react-icons/fa6';
 import { Link } from 'react-router-dom';
+import Pagination from '../Component/Pagination';
 
 const Shop = () => {  
   let dispatch = useDispatch()
@@ -21,27 +22,39 @@ const Shop = () => {
       <Container>      
         <button onClick={handleIncrement}>increment</button>        
         <p>{data1}</p>
+                
         <Heading text='Products' className='pt-[124px]'/>
         <Flex className='gap-x-2 text-[#767676] font-DM pb-[127px] items-center'>
           <p> <Link to={previousValue=="Home"? "/" : `/${previousValue?.toLowerCase()}`}>{!previousValue || previousValue===currentValue? previousValue="Home":previousValue}</Link> </p> <span><FaAngleRight /></span> <p>{currentValue || 'Shop'}</p>
         </Flex>
-        <SubHeading text='Shop by Category' className='pb-[35px]'/>
-        <Flex className='gap-x-10'>
-          <div className='w-3/12'>
-            <Flex className='items-center justify-between border-b border-[#f0f0f0]'>
-              <p className='text-[#767676] font-DM pb-5'>Mobile Phone</p>
-              <FiPlus className='cursor-pointer' />
-            </Flex>
-            <div>
-              <ul>
-                <li>Redmi</li>
-                <li>Xiomi</li>
-                <li>Samsung</li>
-                <li>Nokia</li>
-              </ul>
-            </div>
-          </div>      
-        </Flex>  
+       
+       <Flex>
+        <div className='w-3/12'>
+          <SubHeading text='Shop by Category' className='pb-[35px]'/>
+            <Flex className='gap-x-10'>
+              <div>
+                <Flex className='items-center justify-between border-b border-[#f0f0f0]'>
+                  <p className='text-[#767676] font-DM pb-5'>Mobile Phone</p>
+                  <FiPlus className='cursor-pointer' />
+                </Flex>
+                <div>
+                  <ul>
+                    <li>Redmi</li>
+                    <li>Xiomi</li>
+                    <li>Samsung</li>
+                    <li>Nokia</li>
+                  </ul>
+                </div>
+              </div>              
+            </Flex> 
+        </div>
+        
+        <div className='w-9/12'>
+             <Pagination itemsPerPage={6} />
+        </div> 
+       </Flex>
+        
+
       </Container>
     </section>
   );
