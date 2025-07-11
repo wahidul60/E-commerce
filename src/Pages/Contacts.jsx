@@ -6,6 +6,7 @@ import SubHeading from '../Component/SubHeading'
 import Button from '../Component/Button'
 import { useSelector } from 'react-redux'
 import { FaAngleRight } from 'react-icons/fa6'
+import { Link } from 'react-router-dom'
 
 const Contacts = () => {
   let previousValue = useSelector((state)=>state.active.previousValue)
@@ -16,7 +17,7 @@ const Contacts = () => {
       <Container>
         <Heading className='pt-[124px] pb-3' text='Contacts'/>
         <Flex className='gap-x-2 text-[#767676] font-DM pb-[125px] items-center'>
-        <p> {!previousValue || previousValue === currentValue? previousValue="Home" : previousValue } </p> <span><FaAngleRight/></span> <p>{currentValue || 'Contact' }</p>
+        <p> <Link to = {previousValue=="Home"? "/": `/${previousValue?.toLowerCase()}`}>{!previousValue || previousValue === currentValue? previousValue="Home" : previousValue }</Link> </p> <span><FaAngleRight/></span> <p>{currentValue || 'Contact' }</p>
         </Flex>
         <Heading text='Fill up a Form' className='pb-10'/>
          <label className='pb-4 block border-b border-[#f0f0f0] w-1/2' htmlFor='name'> <SubHeading  text='Name:'/> 

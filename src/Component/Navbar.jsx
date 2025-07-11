@@ -23,7 +23,7 @@ const Navbar = () => {
                       <Link onClick={()=>handleClick("Home")} to='/'><List className='w-1/5' text="Home"/></Link>
                       <Link onClick={()=>handleClick("Shop")}to='shop'><List className='w-1/5' text="Shop"/></Link>
                       <Link onClick={()=>handleClick("About")}to='about'><List className='w-1/5' text="About"/></Link>
-                      <Link onClick={()=>handleClick("Contact")}to='contacts'><List className='w-1/5' text="Contact"/></Link>
+                      <Link onClick={()=>handleClick("Contacts")}to='contacts'><List className='w-1/5' text="Contact"/></Link>
                       <Link onClick={()=>handleClick("Journal")}to=''><List text="Journal"/></Link>
                     </Flex>
                 </div>
