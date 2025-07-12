@@ -1,5 +1,7 @@
 @import "tailwindcss";
-
+body {
+  overflow-x: hidden;
+}
 @theme{
     --spacing-container: 1680px; 
     --font-DM:"DM Sans"

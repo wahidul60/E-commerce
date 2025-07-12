@@ -10,7 +10,7 @@ let data = [
      },   
     {
         id : 2,
-        title : "Mug",
+        title : "Glass",
         price : "10$",
         image : product02,
      },  
@@ -22,7 +22,7 @@ let data = [
      },  
     {
         id : 4,
-        title : "Mug",
+        title : "Glass",
         price : "10$",
         image : product02,
      },  
@@ -34,7 +34,7 @@ let data = [
      },   
     {
         id : 6,
-        title : "Mug",
+        title : "Glass",
         price : "10$",
         image : product02,
      },{

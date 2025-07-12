@@ -28,7 +28,7 @@ const Contacts = () => {
                 <input className='text-[#767676] font-DM text-[10px] p-1 rounded' id='email' placeholder='Enter your email here'></input>
              </label> 
 
-             <label className='pb-4 block border-b border-[#f0f0f0] pt-5 w-1/2' htmlFor='review'> <SubHeading  text='Message:'/> 
+             <label className='pb-4 block border-b border-[#020202] pt-5 w-1/2' htmlFor='review'> <SubHeading  text='Message:'/> 
                 <textarea id="review" rows="10" cols="100" className='text-[#767676] font-DM text-[10px] p-1 rounded' placeholder='Enter your message here'></textarea>
              </label> 
              <div className='pt-4 pb-[140px]'><Button text='Post'/></div>

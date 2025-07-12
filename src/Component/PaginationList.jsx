@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import ReactPaginate from 'react-paginate';
-import Card from '../Component/Card';
+import CardList from '../Component/CardList';
 import data from '../data'
 import Flex from './Flex';
 
@@ -9,11 +9,11 @@ const items = data;
 function Items({ currentItems }) {
   return (
     <>
-      <div className='flex flex-wrap gap-y-5 gap-x-5'>
+      <div >
         {currentItems &&
         currentItems.map((item) => (
           <div>
-            <Card src={item.image} price = {item.price} productName={item.title} text1='new'/>
+            <CardList src={item.image} price = {item.price} productName={item.title} text1='new'/>
           </div>
         ))}
       </div>
@@ -21,7 +21,7 @@ function Items({ currentItems }) {
   );
 }
 
-function Pagination({ itemsPerPage }) { 
+function PaginationList({ itemsPerPage }) { 
   const [itemOffset, setItemOffset] = useState(0); 
   const endOffset = itemOffset + itemsPerPage; 
   const currentItems = items.slice(itemOffset, endOffset);
@@ -61,4 +61,4 @@ function Pagination({ itemsPerPage }) {
   );
 }
 
-export default Pagination;
+export default PaginationList;
