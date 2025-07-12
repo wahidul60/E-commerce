@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import ReactDOM from 'react-dom';
 import ReactPaginate from 'react-paginate';
 import Card from '../Component/Card';
-import image1 from '../assets/CardImage1.jpg'
 import data from '../data'
-console.log(data)
-// Example items, to simulate fetching from another resources.
+import Flex from './Flex';
+
 const items = data;
 
 function Items({ currentItems }) {
@@ -23,20 +21,12 @@ function Items({ currentItems }) {
   );
 }
 
-function Pagination({ itemsPerPage }) {
-  // Here we use item offsets; we could also use page offsets
-  // following the API or data you're working with.
-  const [itemOffset, setItemOffset] = useState(0);
-
-  // Simulate fetching items from another resources.
-  // (This could be items from props; or items loaded in a local state
-  // from an API endpoint with useEffect and useState)
+function Pagination({ itemsPerPage }) { 
+  const [itemOffset, setItemOffset] = useState(0); 
   const endOffset = itemOffset + itemsPerPage;
   console.log(`Loading items from ${itemOffset} to ${endOffset}`);
   const currentItems = items.slice(itemOffset, endOffset);
-  const pageCount = Math.ceil(items.length / itemsPerPage);
-
-  // Invoke when user click to request another page.
+  const pageCount = Math.ceil(items.length / itemsPerPage);  
   const handlePageClick = (event) => {
     const newOffset = (event.selected * itemsPerPage) % items.length;
     console.log(
@@ -48,15 +38,26 @@ function Pagination({ itemsPerPage }) {
   return (
     <>
       <Items currentItems={currentItems} />
-      <ReactPaginate
+      <Flex className='items-center pt-15 pb-[126px] justify-between'>
+        <div>
+        <ReactPaginate
         breakLabel="..."
-        nextLabel="next >"
+        nextLabel=""
         onPageChange={handlePageClick}
-        pageRangeDisplayed={5}
+        pageRangeDisplayed={3}
+        marginPagesDisplayed = {1}
         pageCount={pageCount}
-        previousLabel="< previous"
+        previousLabel=""
         renderOnZeroPageCount={null}
-      />
+        containerClassName = 'flex'
+        breakClassName = 'font-DM font-normal'
+        pageLinkClassName = 'hover:bg-[#262626] duration-500 bg-[white] text-[#767676] hover:text-white border border-[#F0F0F0] px-5 py-3 text-[20px] cursor-pointer'
+        pageClassName = 'w-[50px] h-[50px] mr-4'
+        breakAriaLabels 
+        />
+        </div>
+        <p className='text-[16px] font-DM font-normal text-[#767676] '>Products from {itemOffset+1} to {endOffset<data.length?endOffset:data.length} of {data.length}</p>
+      </Flex>
     </>
   );
 }
