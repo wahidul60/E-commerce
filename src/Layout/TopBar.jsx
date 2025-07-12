@@ -12,7 +12,7 @@ import { Link } from 'react-router-dom';
 
 const TopBar = () => {
   return (
-   <section className='bg-[#e4e4e4] '>
+   <section className='bg-[#e4e4e4] w-full'>
     <Container>
         <Flex className='justify-center items-center '>
             <div className='w-4/16'>
