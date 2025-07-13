@@ -16,6 +16,7 @@ import { useState } from 'react';
 const Shop = () => {  
   let [dash, setDash] = useState(true)
   let [list, setList] = useState(false)
+  let [store, setStore] = useState(12)
   let dispatch = useDispatch()
   let data1 = useSelector((state)=> state.counter.value) 
   let previousValue = useSelector((state)=> state.active.previousValue) 
@@ -30,11 +31,15 @@ const Shop = () => {
     setDash(false);
     setList(true);
   }
-
   
   let handleIncrement =()=> {
     dispatch (increment(1))    
   }  
+
+  let handleChange =(e)=> {
+    setStore(+e.target.value)
+  }
+
   return (
     <section>
       <Container>      
@@ -88,7 +93,7 @@ const Shop = () => {
                 
                 <div>
                   <label for='short' className='cursor-pointer font-DM font-normal text-4 text-[#767676] mr-6'>Sort by:</label>
-                    <select name="" id="short" className='border rounded border-[#bfbfbf] p-2 pr-[120px] text-[#767676]'>
+                    <select name="" id="short" className='border rounded border-[#bfbfbf] p-2 pl-[60px] pr-[50px] text-[#767676]'>
                       <option value="Feature">Feature</option>
                       <option value="Colour">Colour</option>
                       <option value="Price">Price</option>
@@ -97,11 +102,11 @@ const Shop = () => {
                           
                 <div>
                   <label for='show' className='cursor-pointer font-DM font-normal text-4 text-[#767676] mr-4 '>Show:</label>
-                    <select name="" id="show" className='font-normal text-[16px] font-DM p-2 pr-[66px] border rounded border-[#bfbfbf] text-[#767676]'>
-                      <option value="12">12</option>
-                      <option value="24">24</option>
-                      <option value="24">36</option>
-                      <option value="24">48</option>
+                    <select onChange={handleChange} name="" id="show" className='font-normal text-[16px] font-DM p-2 pl-[30px] pr-[20px] border rounded border-[#bfbfbf] text-[#767676]'>
+                      <option value= {12}>12</option>
+                      <option value={24}>24</option>
+                      <option value={36}>36</option>
+                      <option value={48}>48</option>
                     </select>
                 </div>
 
@@ -109,7 +114,7 @@ const Shop = () => {
             </div>
           </Flex>
           
-          {dash ? <Pagination itemsPerPage={8} /> : <PaginationList itemsPerPage={8} /> }
+          {dash ? <Pagination itemsPerPage={store} /> : <PaginationList itemsPerPage={store} /> }
         
           
              
