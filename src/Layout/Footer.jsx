@@ -13,9 +13,10 @@ import { Link } from 'react-router-dom'
 
 const Footer = () => {
   return (
-    <section className='bg-[#e4e4e4]'>
+    <section>
         <Container>
-            <Flex className='justify-between pt-[55px] pb-[65px]'>
+            <div className='bg-[#e4e4e4] w-full'>
+                <Flex className='justify-between pt-[55px] pb-[65px]'>
                 <div className='w-2/12'>
                       <SubHeading className='pb-4' text='MENU'/>
                       <Link to='/'><List text="Home"/></Link>
@@ -51,6 +52,7 @@ const Footer = () => {
               <div className='flex gap-x-4'><FaFacebook /> <FaLinkedin/><IoLogoInstagram /></div>
               <div> <p className='text-DM font-[500] text-[14px] text-[#767676]'>2020 Orebi Minimal eCommerce Figma Template by Adveits</p> </div>
             </Flex>
+            </div>
         </Container>
 
     </section>
