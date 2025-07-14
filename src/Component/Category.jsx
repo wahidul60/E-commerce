@@ -1,19 +1,23 @@
 import React from 'react'
 import { FiMinus, FiPlus } from 'react-icons/fi'
 import Flex from './Flex'
+import { useDispatch, useSelector } from 'react-redux'
+import { toggleCategory } from '../Slices/categorySlice'
+
 
 const Category = () => {
-    let [category, setCategory] = useState(false)
+    let dispatch = useDispatch () 
     let handleCategory =()=>{
-        setCategory(!category)
+        dispatch(toggleCategory())
     }
+    let categoryData = useSelector((state)=>state.category.value)
     
   return (
         <Flex className='w-full items-center justify-between border-b border-[#f0f0f0]'>
             <p className='text-[#767676] font-DM pb-5'>Mobile Phone</p>
             <div onClick={handleCategory}>
                 {
-                category ? <FiMinus /> : <FiPlus />
+                categoryData ? <FiMinus className='cursor-pointer text-[#767676]'/> : <FiPlus className='cursor-pointer text-[#767676]' />
                 }                    
             </div>
         </Flex>

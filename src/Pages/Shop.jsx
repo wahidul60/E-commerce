@@ -23,6 +23,7 @@ const Shop = () => {
   let data1 = useSelector((state)=> state.counter.value) 
   let previousValue = useSelector((state)=>state.active.previousValue) 
   let currentValue = useSelector((state)=>state.active.currentValue)
+  let categoryData = useSelector((state)=>state.category.value)
   
   let handleDashboard =()=>{    
     setDash(true);
@@ -42,6 +43,8 @@ const Shop = () => {
   let handleChange =(e)=> {
     setStore(+e.target.value)
   }
+
+  
   
   return (
     <section>
@@ -62,7 +65,7 @@ const Shop = () => {
               <div>
                 <Category/>                
                 {
-                  category && 
+                  categoryData && 
                   <SubCategory/>
                 }
               </div> 
