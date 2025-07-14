@@ -2,7 +2,7 @@ import Container from '../Component/Container'
 import Flex from '../Component/Flex'
 import Heading from '../Component/Heading'
 import SubHeading from '../Component/SubHeading'
-import { FiPlus } from "react-icons/fi";
+import { FiMinus, FiPlus } from "react-icons/fi";
 import { useDispatch, useSelector } from 'react-redux'
 import { increment } from '../Slices/counterSlice'
 import { FaAngleRight } from 'react-icons/fa6';
@@ -12,14 +12,16 @@ import PaginationList from '../Component/PaginationList';
 import { RxDashboard } from 'react-icons/rx';
 import { TfiViewListAlt } from 'react-icons/tfi';
 import { useState } from 'react';
+import Category from '../Component/Category';
+import SubCategory from '../Component/SubCategory';
 
 const Shop = () => {  
   let [dash, setDash] = useState(true)
   let [list, setList] = useState(false)
   let [store, setStore] = useState(12)
-  let dispatch = useDispatch()
+  let dispatch = useDispatch()  
   let data1 = useSelector((state)=> state.counter.value) 
-  let previousValue = useSelector((state)=> state.active.previousValue) 
+  let previousValue = useSelector((state)=>state.active.previousValue) 
   let currentValue = useSelector((state)=>state.active.currentValue)
   
   let handleDashboard =()=>{    
@@ -31,7 +33,8 @@ const Shop = () => {
     setDash(false);
     setList(true);
   }
-  
+
+   
   let handleIncrement =()=> {
     dispatch (increment(1))    
   }  
@@ -39,7 +42,7 @@ const Shop = () => {
   let handleChange =(e)=> {
     setStore(+e.target.value)
   }
-
+  
   return (
     <section>
       <Container>      
@@ -51,25 +54,20 @@ const Shop = () => {
           <p> <Link to={previousValue=="Home"? "/" : `/${previousValue?.toLowerCase()}`}>{!previousValue || previousValue===currentValue? previousValue="Home":previousValue}</Link> </p> <span><FaAngleRight /></span> <p>{currentValue || 'Shop'}</p>
         </Flex>
        
-       <Flex className= 'w-[full]'>
+       <Flex className= 'w-[full] gap-x-[40px]'>
+        
         <div className='w-3/12'>
           <SubHeading text='Shop by Category' className='pb-[35px]'/>
-            <Flex className='gap-x-10'>
+                         
               <div>
-                <Flex className='items-center justify-between border-b border-[#f0f0f0]'>
-                  <p className='text-[#767676] font-DM pb-5'>Mobile Phone</p>
-                  <FiPlus className='cursor-pointer' />
-                </Flex>
-                <div>
-                  <ul>
-                    <li>Redmi</li>
-                    <li>Xiomi</li>
-                    <li>Samsung</li>
-                    <li>Nokia</li>
-                  </ul>
-                </div>
-              </div>              
-            </Flex> 
+                <Category/>                
+                {
+                  category && 
+                  <SubCategory/>
+                }
+              </div> 
+
+            
         </div>
         
         <div className='w-9/12'>
