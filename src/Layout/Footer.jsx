@@ -13,7 +13,7 @@ import { Link } from 'react-router-dom'
 
 const Footer = () => {
   return (
-    <section>
+    <section className='bg-[#e4e4e4] w-full'>
         <Container>
             <div className='bg-[#e4e4e4] w-full'>
                 <Flex className='justify-between pt-[55px] pb-[65px]'>

@@ -1,13 +1,11 @@
 import React from 'react'
 
-const SubCategory = () => {
+const SubCategory = ({subCategoryName}) => {
   return (
-    <div className='pl-5'>
+    <div className='pl-5 pt-5'>
         <ul>
-            <li>Redmi</li>
-            <li>Xiomi</li>
-            <li>Samsung</li>
-            <li>Nokia</li>
+            <li>{subCategoryName}</li>
+            
         </ul>
     </div>
   )

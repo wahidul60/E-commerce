@@ -63,14 +63,33 @@ const Shop = () => {
           <SubHeading text='Shop by Category' className='pb-[35px]'/>
                          
               <div>
-                <Category/>                
+                <Category categoryName='Mobile'/>                 
                 {
                   categoryData && 
-                  <SubCategory/>
+                  <>
+                  <SubCategory subCategoryName='Xiomi'/>
+                  <SubCategory subCategoryName='Nokia'/>
+                  <SubCategory subCategoryName='Samsung'/>
+                  <SubCategory subCategoryName='Vivo'/>
+                  </>                  
                 }
+                
               </div> 
 
-            
+              <div>
+                <Category categoryName ='Desktop'/>                
+                {
+                  categoryData && 
+                  <>
+                  <SubCategory subCategoryName='Monitor'/>
+                  <SubCategory subCategoryName='Keyboard'/>
+                  <SubCategory subCategoryName='Mouse'/>
+                  <SubCategory subCategoryName='Speaker'/>
+                  </>
+                }
+                
+              </div> 
+
         </div>
         
         <div className='w-9/12'>
