@@ -8,7 +8,6 @@ export const store = configureStore({
     counter: counterSlice,
     active: breadcumb,
     category : categoryReducer,
-
     },
   
 })

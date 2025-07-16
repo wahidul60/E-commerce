@@ -61,34 +61,26 @@ const Shop = () => {
         
         <div className='w-3/12'>
           <SubHeading text='Shop by Category' className='pb-[35px]'/>
-                         
-              <div>
-                <Category categoryName='Mobile'/>                 
-                {
-                  categoryData && 
-                  <>
-                  <SubCategory subCategoryName='Xiomi'/>
-                  <SubCategory subCategoryName='Nokia'/>
-                  <SubCategory subCategoryName='Samsung'/>
-                  <SubCategory subCategoryName='Vivo'/>
-                  </>                  
-                }
-                
-              </div> 
+         
+          <div>
+            <Category categoryName='Mobile'>                
+                <SubCategory subCategoryName='Xiomi'/>
+                <SubCategory subCategoryName='Nokia'/>
+                <SubCategory subCategoryName='Samsung'/>
+                <SubCategory subCategoryName='Vivo'/>
+            </Category>
+          </div>
 
-              <div>
-                <Category categoryName ='Desktop'/>                
-                {
-                  categoryData && 
-                  <>
-                  <SubCategory subCategoryName='Monitor'/>
-                  <SubCategory subCategoryName='Keyboard'/>
-                  <SubCategory subCategoryName='Mouse'/>
-                  <SubCategory subCategoryName='Speaker'/>
-                  </>
-                }
-                
-              </div> 
+          <div>
+            <Category categoryName='Desktop'>                
+                <SubCategory subCategoryName='Monitor'/>
+                <SubCategory subCategoryName='Nokia'/>
+                <SubCategory subCategoryName='Samsung'/>
+                <SubCategory subCategoryName='Vivo'/>
+            </Category>
+          </div>
+          
+
 
         </div>
         

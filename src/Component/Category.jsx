@@ -5,25 +5,31 @@ import { useDispatch, useSelector } from 'react-redux'
 import { toggleCategory } from '../Slices/categorySlice'
 
 
-const Category = ({categoryName}) => {
-   
+const Category = ({categoryName, children}) => {   
     let dispatch = useDispatch () 
+
     let handleCategory =()=>{
-        dispatch(toggleCategory())
+        dispatch(toggleCategory(categoryName))
         
     }
-    let categoryData = useSelector((state)=>state.category.value)
+    let categoryData = useSelector((state)=>state.category.openCategories[categoryName] || false)
     
   return (
-        <Flex className='w-full items-center justify-between border-b border-[#f0f0f0]'>
+        <div>
+            <Flex className='w-full items-center justify-between border-b border-[#f0f0f0]'>
             <p className='text-[#767676] font-DM pb-5 pt-5'>{categoryName}</p>
             <div onClick={handleCategory} className='pb-5 pt-5'>
                 
                 {
                 categoryData ? <FiMinus className='cursor-pointer text-[#767676]'/> : <FiPlus className='cursor-pointer text-[#767676]' />
                 }                    
+
             </div>
-        </Flex>
+            </Flex>
+            {categoryData && <>{children}</>}
+        </div>
+        
+
    
   )
 }
