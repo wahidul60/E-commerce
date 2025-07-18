@@ -7,12 +7,16 @@ export const categorySlice = createSlice ({
     },
     reducers: {
         toggleCategory: (state, action) => {            
+             const name=action.payload
+             state.openCategories[name] = !state.openCategories[name]
+           
+           {/*Spread Toggle
             const name = action.payload
             const prevState = state.openCategories
             state.openCategories = {
                 ...prevState,
-                [name]: !prevState[name]
-            }
+                [name]: !prevState[name]*/} 
+            
         }
     }
 })
@@ -20,5 +24,3 @@ export const categorySlice = createSlice ({
 export const {toggleCategory} = categorySlice.actions
 export default categorySlice.reducer
 
-//  const name=action.payload
-//  state.openCategories[name] = !state.openCategories[name]

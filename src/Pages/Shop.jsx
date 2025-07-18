@@ -62,23 +62,28 @@ const Shop = () => {
         <div className='w-3/12'>
           <SubHeading text='Shop by Category' className='pb-[35px]'/>
          
-          <div>
+          
             <Category categoryName='Mobile'>                
                 <SubCategory subCategoryName='Xiomi'/>
                 <SubCategory subCategoryName='Nokia'/>
                 <SubCategory subCategoryName='Samsung'/>
                 <SubCategory subCategoryName='Vivo'/>
             </Category>
-          </div>
-
-          <div>
+          
             <Category categoryName='Desktop'>                
                 <SubCategory subCategoryName='Monitor'/>
                 <SubCategory subCategoryName='Nokia'/>
                 <SubCategory subCategoryName='Samsung'/>
                 <SubCategory subCategoryName='Vivo'/>
             </Category>
-          </div>
+
+            <Category categoryName='TV'>                
+                <SubCategory subCategoryName='sdfsdf'/>
+                <SubCategory subCategoryName='wwww'/>
+                <SubCategory subCategoryName='cxcvc'/>
+                <SubCategory subCategoryName='sdfsdf'/>
+            </Category>
+          
           
 
 
@@ -104,7 +109,7 @@ const Shop = () => {
               <Flex className='gap-x-10'>
                 
                 <div>
-                  <label for='short' className='cursor-pointer font-DM font-normal text-4 text-[#767676] mr-6'>Sort by:</label>
+                  <label htmlFor='short' className='cursor-pointer font-DM font-normal text-4 text-[#767676] mr-6'>Sort by:</label>
                     <select name="" id="short" className='border rounded border-[#bfbfbf] p-2 pl-[60px] pr-[50px] text-[#767676]'>
                       <option value="Feature">Feature</option>
                       <option value="Colour">Colour</option>
@@ -113,7 +118,7 @@ const Shop = () => {
                 </div>
                           
                 <div>
-                  <label for='show' className='cursor-pointer font-DM font-normal text-4 text-[#767676] mr-4 '>Show:</label>
+                  <label htmlFor='show' className='cursor-pointer font-DM font-normal text-4 text-[#767676] mr-4 '>Show:</label>
                     <select onChange={handleChange} name="" id="show" className='font-normal text-[16px] font-DM p-2 pl-[30px] pr-[20px] border rounded border-[#bfbfbf] text-[#767676]'>
                       <option value= {12}>12</option>
                       <option value={24}>24</option>
