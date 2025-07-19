@@ -49,8 +49,8 @@ const Shop = () => {
   return (
     <section>
       <Container>      
-        <button onClick={handleIncrement}>increment</button>        
-        <p>{data1}</p>
+        {/* <button onClick={handleIncrement}>increment</button>        
+        <p>{data1}</p> */}
                 
         <Heading text='Products' className='pt-[124px]'/>
         <Flex className='gap-x-2 text-[#767676] font-DM pb-[127px] items-center'>

@@ -10,9 +10,12 @@ import { Link } from 'react-router-dom';
 import Image from '../Component/Image';
 import { RxCross2 } from 'react-icons/rx';
 import Button from '../Component/Button';
+import AddToCard from '../Component/AddToCard';
+import { useSelector } from 'react-redux';
 
-const TopBar = ({src}) => {
+const TopBar = () => {
     let [card, setCard] = useState(false);
+       let productName = useSelector((state)=>state.addtocard.cardObj)    
     let handleAddToCard =()=>{
         setCard(!card)
     }
@@ -35,43 +38,17 @@ const TopBar = ({src}) => {
                 <div className='w-4/16 '>
                     <Flex className=' justify-end gap-5'>
                     <Link to='login'>
-                            <Flex>
+                            <Flex className='hover:scale-[1.5] duration-200'>
                                 <IoMdContact className='text-black' />
                                 <IoMdArrowDropdown className='text-black' />  
                             </Flex>
                         </Link>
                         
                         <div className='relative cursor-pointer'>
-                            <IoCartOutline onClick={handleAddToCard}  />
+                            <IoCartOutline className='hover:scale-[1.5] duration-200' onClick={handleAddToCard}  />
                         {
                             card && (
-                                <div className='bg-[#F0F0F0] absolute top-8 right-0 w-[360px] h-[241px] z-10'>
-                                   <Flex className='items-center'>
-                                       
-                                        <div className='mt-5 ml-5 mb-[34px] w-1/3'>
-                                            <Image className='w-[80px] h-[80px] bg-amber-100' src={src}/>
-                                        </div>                                        
-                                        
-                                        <Flex className='justify-between w-2/3 mr-5 items-center'>
-                                            <div >
-                                                <p className='font-DM font-bold text-[14px]'>Black Smart Watch</p>
-                                                <p className='font-DM font-bold text-[14px]'>$44.00</p>
-                                            </div>
-                                            <RxCross2 className='text-5'/>
-                                        </Flex>                                    
-
-                                    </Flex> 
-
-                                    <Flex className='ml-5 mb-3'>
-                                        <p className='font-DM font-normal text-[16px] text-[#767676]'>Subtotal:</p>
-                                        <p className='font-DM font-normal text-[16px] '>$44.00</p>
-                                    </Flex>     
-
-                                    <Flex className='gap-x-5 items-center justify-center'>
-                                        <Button className='w-[148px] h-[50px] !py-[12px] !px-[30px] border hover:border hover:text-black hover:border-[#767676] hover:bg-white' text='View Card'/>
-                                        <Button className='w-[148px] h-[50px] !py-[12px] !px-[30px] border hover:border hover:text-black hover:border-[#767676] hover:bg-white ' text='Checkout'/>    
-                                    </Flex>                                                                      
-                                </div>
+                                <AddToCard/>                               
                             )
                         }
                         </div>

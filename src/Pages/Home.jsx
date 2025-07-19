@@ -51,24 +51,24 @@ const Home = () => {
         <Heading text='New Arrivals' className='pb-12'/>    
         <div className="slider-container">
         <Slider {...settings}>
-            <Card src={CardImage1} productName='Basic Crew Neck Tee' price='$44.00' text1='New' />
-            <Card src={CardImage2} productName='Basic Crew Neck Tee' price='$44.00' text1='New'/>
-            <Card src={CardImage3} productName='Basic Crew Neck Tee' price='$44.00' text1='New'/>
-            <Card src={CardImage4} productName='Basic Crew Neck Tee' price='$44.00' text1='New'/>
-            <Card src={CardImage2} productName='Basic Crew Neck Tee' price='$44.00' text1='New'/>
-            <Card src={CardImage3} productName='Basic Crew Neck Tee' price='$44.00' text1='New'/>
+            <Card src={CardImage1} productName='Basic Crew Neck Tee' price= {20} text1='New' />
+            <Card src={CardImage2} productName='Basic Crew Neck Tee' price= {20} text1='New'/>
+            <Card src={CardImage3} productName='Basic Crew Neck Tee' price= {20} text1='New'/>
+            <Card src={CardImage4} productName='Basic Crew Neck Tee' price= {20} text1='New'/>
+            <Card src={CardImage2} productName='Basic Crew Neck Tee' price= {20} text1='New'/>
+            <Card src={CardImage3} productName='Basic Crew Neck Tee' price= {20} text1='New'/>
         </Slider>
         </div>      
         <Flex className='gap-x-10 justify-between pb-[118px]'>             
         </Flex>
         <Heading text='Our Bestsellers' className='pb-12'/>       
         <Slider {...Bestsellers} className='pb-[118px]' >     
-            <Card src={CardImage1} productName='Basic Crew Neck Tee' price='$44.00' text1='New' />
-            <Card src={CardImage2} productName='Basic Crew Neck Tee' price='$44.00' text1='New'/>
-            <Card src={CardImage3} productName='Basic Crew Neck Tee' price='$44.00' text1='New'/>
-            <Card src={CardImage4} productName='Basic Crew Neck Tee' price='$44.00' text1='New'/>
-            <Card src={CardImage2} productName='Basic Crew Neck Tee' price='$44.00' text1='New'/>
-            <Card src={CardImage3} productName='Basic Crew Neck Tee' price='$44.00' text1='New'/>
+            <Card src={CardImage1} productName='Basic Crew  Tee'    price= {44} text1='New' />
+            <Card src={CardImage2} productName='sasic Crew eck Tee'   price={80} text1='New'/>
+            <Card src={CardImage3} productName='basic Crew dkf Tee' price= {90}text1='New'/>
+            <Card src={CardImage4} productName='basic Crew Nesdfk Tee' price= {10} text1='New'/>
+            <Card src={CardImage2} productName='casic Crew Necsdfdfdk Tee' price= {11} text1='New'/>
+            <Card src={CardImage3} productName='dasic Crew Nec Tee' price= {13} text1='New'/>
         </Slider>      
         <div className='relative pb-[128px]'>
           <Image src={Ad4} className='w-[1673px] h-auto'/>
@@ -80,10 +80,10 @@ const Home = () => {
         </div>
         <Heading text='Special Offers' className='pb-[48px]'/>
         <Flex className='gap-x-10 justify-between pb-[118px]'>
-          <Card src={CardImage9} productName='Basic Crew Neck Tee' price='$44.00' text1='New' />
-          <Card src={CardImage10} productName='Basic Crew Neck Tee' price='$44.00' text1='New'/>
-          <Card src={CardImage11} productName='Basic Crew Neck Tee' price='$44.00' text1='New'/>
-          <Card src={CardImage12} productName='Basic Crew Neck Tee' price='$44.00' text1='New'/>
+          <Card src={CardImage9} productName='Basic Crew Neck Tee' price={44} text1='New' />
+          <Card src={CardImage10} productName='Basic Crew Neck Tee' price={44} text1='New'/>
+          <Card src={CardImage11} productName='Basic Crew Neck Tee' price={44} text1='New'/>
+          <Card src={CardImage12} productName='Basic Crew Neck Tee' price={44} text1='New'/>
         </Flex>
       </Container>
     </div>

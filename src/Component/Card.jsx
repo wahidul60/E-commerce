@@ -1,4 +1,3 @@
-import React from 'react'
 import Image from './Image'
 import Flex from './Flex'
 import { IoMdHeart} from "react-icons/io";
@@ -6,7 +5,6 @@ import { MdShoppingCart } from "react-icons/md";
 import { TfiReload } from "react-icons/tfi";
 import { useDispatch } from 'react-redux';
 import { addToCard } from '../Slices/addToCardSlice';
-
 
 const Card = ({productName,src,price,text1}) => {
   let dispatch = useDispatch()
@@ -23,9 +21,9 @@ const Card = ({productName,src,price,text1}) => {
     <section>
         <div className='w-[300px] relative group overflow-hidden hover:scale-[1.03] duration-200'>
             <Image src={src} className='w-full h-[300px] mb-6 border border-[#f0f0f0]'/>
-            <Flex className='justify-between'>
-                <h1 className='font-DM text-[20px] text-[#262626] font-bold pb-4'>{productName}</h1>
-                <h3 className='font-DM text-[16px] text-[#6D6D6D]'>{price}</h3>
+            <Flex className='justify-between items-center pb-4 '>
+                <h1 className='font-DM text-[20px] text-[#262626] font-bold '>{productName}</h1>
+                <h1 className='font-DM text-[16px] text-[#6D6D6D]'>$ {price} </h1>
             </Flex>
 
             <h3 className='font-DM text-[16px] text-[#6D6D6D]'>Black</h3>

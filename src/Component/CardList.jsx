@@ -18,7 +18,7 @@ const CardList = ({productName,src,price,text1}) => {
                     <h3 className='font-DM text-[16px] text-[#6D6D6D]'>{price}</h3>
                     <h3 className='font-DM text-[16px] text-[#6D6D6D]'>Black</h3>
                 </div>
-                <p className='ml-5 w-[800px] h-auto' >Lorem, ipsum dolor sit amet consectetur adipisicing elit. <br/> Voluptatum quod consectetur sit dolor. <br/> Ipsa tempore voluptatibus rerum dolorum eum accusamus nam nemo fugiat atque. .</p>
+                <p className='ml-5 w-[650px] h-auto' >Lorem, ipsum dolor sit amet consectetur adipisicing elit. <br/> Voluptatum quod consectetur sit dolor. <br/> Ipsa tempore voluptatibus rerum dolorum eum accusamus nam nemo fugiat atque. .</p>
             </Flex>           
             <div className='mr-4'>
                 <div className=' cursor-pointer '>

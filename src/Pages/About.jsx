@@ -15,7 +15,7 @@ const About = () => {
   return (
     <Container>
       <div>
-      <p>this is : {data1}</p>    
+      {/* <p>this is : {data1}</p>     */}
       <Heading className='pt-[124px] pb-3' text='About'/>
         <Flex className='gap-x-2 text-[#767676] font-DM pb-[125px] items-center'>
         <p> <Link to = {previousValue=="Home"? "/": `/${previousValue?.toLowerCase()}`}>{!previousValue || previousValue === currentValue? previousValue="Home" : previousValue }</Link> </p> <span><FaAngleRight/></span> <p>{currentValue || 'About' }</p> 

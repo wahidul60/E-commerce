@@ -12,8 +12,8 @@ function Items({ currentItems }) {
       <div className='flex flex-wrap gap-y-5 gap-x-2 justify-between'>
         {currentItems &&
         currentItems.map((item) => (
-          <div>
-            <Card src={item.image} price = {item.price} productName={item.title} text1='new'/>
+          <div key={item.id}>
+            <Card  src={item.image} price = {item.price} productName={item.title} text1='new'/>
           </div>
         ))}
       </div>
