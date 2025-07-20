@@ -8,13 +8,14 @@ import { FaAngleRight, FaMinus, FaPlus } from 'react-icons/fa'
 import Button from '../Component/Button'
 import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
-import { decrement, increment } from '../Slices/addToCardSlice'
+import { decrement, increment, removeItem } from '../Slices/addToCardSlice'
+import { useEffect, useState } from 'react'
 
 
 const Card = () => {
-  let cardItem = useSelector((state)=> state.addtocard.cardObj)
-  let dispatch = useDispatch()
-  
+  let cardItem = useSelector((state)=> state.addtocard.cardObj);
+  let dispatch = useDispatch();
+  const [total, setTotal] = useState(0);
   let handleDecrement=(item)=>{
     item.quantity>0 &&
     dispatch(decrement (item))    
@@ -23,6 +24,19 @@ const Card = () => {
   let handleIncrement = (item) => {
     dispatch(increment(item))    
   }
+  
+
+  useEffect(()=>{
+    let total = 0
+    cardItem.map(item=>{total+=item.quantity*item.price})
+    setTotal(total)
+  },[cardItem]
+  )
+ 
+  let handleRemove =(item)=> {
+    dispatch(removeItem(item))
+  }
+  
 
   return (
     <section>
@@ -47,7 +61,7 @@ const Card = () => {
           
           <Flex className='w-3/12 items-center'>
             
-            <div className='pl-5 pr-10 font-bold text-[20px] cursor-pointer'><RxCross2 /></div>
+            <div onClick={()=>handleRemove(item)} className='pl-5 pr-10 font-bold text-[20px] cursor-pointer'><RxCross2 /></div>
             <div>
               <Image src={item.image} className='w-[100px] h-[100px]' />
             </div>
@@ -100,7 +114,7 @@ const Card = () => {
                 <h1>Subtotal</h1>
               </div>
               <div className='text-[#767676] font-DM w-1/2'>
-                <p>389.99 $</p>
+                <p>{total} $</p>
               </div>
             </Flex>
 
@@ -109,13 +123,13 @@ const Card = () => {
                 <h1>Total</h1>
               </div>
               <div className='font-DM w-1/2'>
-                <p>389.99 $</p>
+                <p>{total} $</p>
               </div>
             </Flex>
           </div>
         </div>
        
-       <div className='w-full flex justify-end my-15' ><Button text='Proceed to Checkout'/>  </div>
+       <Link to='/checkout'><div className='w-full flex justify-end my-15' ><Button text='Proceed to Checkout'/>  </div></Link>
         
       </Container>
     

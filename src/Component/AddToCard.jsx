@@ -3,15 +3,18 @@ import Flex from './Flex'
 import Image from './Image'
 import { RxCross2 } from 'react-icons/rx'
 import Button from './Button'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
+import { removeItem } from '../Slices/addToCardSlice'
 
 const AddToCard = ({src}) => { 
      let cardItem = useSelector((state)=>state.addtocard.cardObj)   
-     const [total, setTotal] = useState(0);
-    //  let total= 0
-    //  cardItem.map(item=>{ total += item.quantity*item.price}) 
+     const [total, setTotal] = useState(0);    
+     let dispatch = useDispatch()
      
+     let cardRemove =(item)=> {
+        dispatch(removeItem(item))
+     }
      useEffect(()=> {
             let total= 0
      cardItem.map(item=>{ total += item.quantity*item.price}) 
@@ -39,7 +42,7 @@ const AddToCard = ({src}) => {
                                 <p className='font-DM font-bold text-[14px] mb-0 pb-0'>$ {item.price}</p>
                                 <p className='font-DM text-[#7b7b7b] font-noramal text-[10px] mt-0 pt-0'>Quantity: {item.quantity}</p>
                             </div>
-                            <RxCross2 className='text-5'/>
+                            <div onClick={()=>cardRemove(item)}><RxCross2 className='text-5'/></div>
                         </Flex>
 
                         </Flex>
@@ -59,7 +62,7 @@ const AddToCard = ({src}) => {
                     <Link to='card'>
                         <Button className='w-[148px] duration-300 h-[50px] !py-[12px] !px-[30px] border hover:border hover:text-black hover:border-[#767676] hover:bg-white' text='View Card'/>
                     </Link>
-                    <Button className='duration-300 w-[148px] h-[50px] !py-[12px] !px-[30px] border hover:border hover:text-black hover:border-[#767676] hover:bg-white ' text='Checkout'/>    
+                  <Link to='/checkout'>  <Button className='duration-300 w-[148px] h-[50px] !py-[12px] !px-[30px] border hover:border hover:text-black hover:border-[#767676] hover:bg-white ' text='Checkout'/> </Link>   
                 </Flex>
                                                                                               
     </div>
