@@ -20,9 +20,24 @@ import "slick-carousel/slick/slick.css";
 import Slider from "react-slick";
 import PrevArrow from '../Component/PrevArrow'
 import NexArrow from '../Component/NexArrow'
+import { useEffect, useState } from 'react'
+import axios from 'axios'
+
 
 
 const Home = () => {
+
+  let [data, setData] = useState([])
+  
+  useEffect(()=> {
+   async function allData(){
+      let data = await axios.get('https://dummyjson.com/products')
+      setData(data.data.products)
+    } 
+    allData()
+  },[])
+  
+ 
         const settings = {
         dots: false,
         infinite: true,
@@ -51,24 +66,28 @@ const Home = () => {
         <Heading text='New Arrivals' className='pb-12'/>    
         <div className="slider-container">
         <Slider {...settings}>
-            <Card src={CardImage1} productName='Basic Crew Neck Tee' price= {20} text1='New' />
-            <Card src={CardImage2} productName='Basic Crew Neck Tee' price= {20} text1='New'/>
-            <Card src={CardImage3} productName='Basic Crew Neck Tee' price= {20} text1='New'/>
-            <Card src={CardImage4} productName='Basic Crew Neck Tee' price= {20} text1='New'/>
-            <Card src={CardImage2} productName='Basic Crew Neck Tee' price= {20} text1='New'/>
-            <Card src={CardImage3} productName='Basic Crew Neck Tee' price= {20} text1='New'/>
+            
+            {
+              data.map(item=>(
+                <Card 
+                  src= {item.thumbnail}  productName= {item.title} price= {item.price} text1='New' />
+              ))
+            }
+            
         </Slider>
         </div>      
         <Flex className='gap-x-10 justify-between pb-[118px]'>             
         </Flex>
         <Heading text='Our Bestsellers' className='pb-12'/>       
         <Slider {...Bestsellers} className='pb-[118px]' >     
-            <Card src={CardImage1} productName='Basic Crew  Tee'    price= {44} text1='New' />
-            <Card src={CardImage2} productName='sasic Crew eck Tee'   price={80} text1='New'/>
-            <Card src={CardImage3} productName='basic Crew dkf Tee' price= {90}text1='New'/>
-            <Card src={CardImage4} productName='basic Crew Nesdfk Tee' price= {10} text1='New'/>
-            <Card src={CardImage2} productName='casic Crew Necsdfdfdk Tee' price= {11} text1='New'/>
-            <Card src={CardImage3} productName='dasic Crew Nec Tee' price= {13} text1='New'/>
+            
+            {
+               data.map(item=>(                
+                <Card src={item.thumbnail} productName={item.title}  price= {item.price} text1='New' />
+              ))
+            }
+            
+           
         </Slider>      
         <div className='relative pb-[128px]'>
           <Image src={Ad4} className='w-[1673px] h-auto'/>

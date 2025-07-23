@@ -3,10 +3,18 @@ import ReactPaginate from 'react-paginate';
 import Card from '../Component/Card';
 import data from '../data'
 import Flex from './Flex';
+import axios from 'axios';
 
 const items = data;
 
 function Items({ currentItems }) {
+  
+  useEffect (()=> {
+    let allData = async()=> {
+      let data = await axios.get('https://dummyjson.com/products')
+    }; allData()
+  }, [])
+  
   return (
     <>
       <div className='flex flex-wrap gap-y-5 gap-x-2 justify-between'>
