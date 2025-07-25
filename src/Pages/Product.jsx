@@ -10,21 +10,18 @@ import Heading from '../Component/Heading'
 import SubHeading from '../Component/SubHeading'
 import { IoMdStar } from "react-icons/io";
 import Button from '../Component/Button'
+import { useParams } from 'react-router-dom'
 
 
-const Product = () => {
+const Product = ({src}) => {
+  let singleProduct = useParams()
   return (
     <section>   
       <Container>
             <Flex className='gap-x-10 pt-[140px] pb-10'>
-              <div className='w-1/2'><Image className='w-full' src={product1}/></div>
-              <div className='w-1/2'><Image className='w-full' src={product2}/></div>
+              <div className='w-1/2'><Image className='w-full' src={src}/></div>                        
             </Flex>
-            <Flex className='gap-x-10 pb-12'>
-              <div className='w-1/2'><Image className='w-full' src={product3}/></div>
-              <div className='w-1/2'><Image className='w-full' src={product4}/></div>
-            </Flex>
-            <Heading text='Product' className='pb-4'/>
+            <Heading text={singleProduct.title} className='pb-4'/>
             <Flex>
               <div className='pr-5 pb-5'>
                 <ul className='flex text-[#FFD881]'>
