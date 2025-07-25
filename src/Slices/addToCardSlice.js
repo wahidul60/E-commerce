@@ -16,7 +16,7 @@ export const addToCardSlice = createSlice({
         {
             alldata.quantity+=1
         }else{
-            state.cardObj.push({...action.payload,quantity:1})
+            state.cardObj.push({...action.payload, price:(action.payload.price), quantity:1})
         }
     },
     increment: (state,action)=> {

@@ -1,19 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import ReactPaginate from 'react-paginate';
 import CardList from '../Component/CardList';
-import data from '../data'
 import Flex from './Flex';
+import axios from 'axios';
 
-const items = data;
+
 
 function Items({ currentItems }) {
   return (
     <>
       <div >
         {currentItems &&
-        currentItems.map((item) => (
+        currentItems.map((Item) => (
           <div>
-            <CardList src={item.image} price = {item.price} productName={item.title} text1='new'/>
+            <CardList src={Item.thumbnail} price = {Item.price} productName={Item.title} text1='new'/>
           </div>
         ))}
       </div>
@@ -22,12 +22,25 @@ function Items({ currentItems }) {
 }
 
 function PaginationList({ itemsPerPage }) { 
+  let [Item, setItem] = useState([]);
+
+  useEffect(()=>{
+    let allData = async ()=> {
+      try {
+        let data = await axios.get('https://dummyjson.com/products');
+        setItem(data.data.products)
+      } catch (error) {
+        console.error("api fetch error",error)
+      }
+    }; allData()
+  }, [])
+
   const [itemOffset, setItemOffset] = useState(0); 
   const endOffset = itemOffset + itemsPerPage; 
-  const currentItems = items.slice(itemOffset, endOffset);
-  const pageCount = Math.ceil(items.length / itemsPerPage);  
+  const currentItems = Item.slice(itemOffset, endOffset);
+  const pageCount = Math.ceil(Item.length / itemsPerPage);  
   const handlePageClick = (event) => {
-    const newOffset = (event.selected * itemsPerPage) % items.length;
+    const newOffset = (event.selected * itemsPerPage) % Item.length;
     console.log(
       `User requested page number ${event.selected}, which is offset ${newOffset}`
     );
@@ -55,7 +68,7 @@ function PaginationList({ itemsPerPage }) {
         activeLinkClassName="!bg-[#262626] !text-white"
         />
         </div>
-        <p className='text-[16px] font-DM font-normal text-[#767676] '>Products from {itemOffset+1} to {endOffset<data.length?endOffset:data.length} of {data.length}</p>
+        <p className='text-[16px] font-DM font-normal text-[#767676] '>Products from {itemOffset+1} to {endOffset<Item.length?endOffset:Item.length} of {Item.length}</p>
       </Flex>
     </>
   );

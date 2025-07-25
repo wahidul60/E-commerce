@@ -114,7 +114,7 @@ const Card = () => {
                 <h1>Subtotal</h1>
               </div>
               <div className='text-[#767676] font-DM w-1/2'>
-                <p>{total} $</p>
+                <p>{Number(total.toFixed(2))} $</p>
               </div>
             </Flex>
 
@@ -123,7 +123,7 @@ const Card = () => {
                 <h1>Total</h1>
               </div>
               <div className='font-DM w-1/2'>
-                <p>{total} $</p>
+                <p>{Number(total.toFixed(2))} $</p>
               </div>
             </Flex>
           </div>

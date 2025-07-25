@@ -13,8 +13,9 @@ import Button from '../Component/Button';
 import AddToCard from '../Component/AddToCard';
 import { useSelector } from 'react-redux';
 
-const TopBar = () => {
+const TopBar = ({showCard}) => {
     let [card, setCard] = useState(false);
+    
        let productName = useSelector((state)=>state.addtocard.cardObj)    
     let handleAddToCard =()=>{
         setCard(!card)
@@ -45,12 +46,10 @@ const TopBar = () => {
                         </Link>
                         
                         <div className='relative cursor-pointer'>
-                            <IoCartOutline className='hover:scale-[1.5] duration-200' onClick={handleAddToCard}  />
-                        {
-                            card && (
-                                <AddToCard/>                               
-                            )
-                        }
+                            <IoCartOutline className='hover:scale-[1.5] duration-200' onClick={() => setCard(true)}  />
+                             <AddToCard showCard={card} onClose={() => setCard(false)} />                               
+                            
+                        
                         </div>
                            
                     </Flex>

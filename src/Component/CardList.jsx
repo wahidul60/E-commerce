@@ -3,9 +3,24 @@ import Flex from './Flex'
 import { IoMdHeart} from "react-icons/io";
 import { MdShoppingCart } from "react-icons/md";
 import { TfiReload } from "react-icons/tfi";
+import { useDispatch } from 'react-redux';
+import { addToCard } from '../Slices/addToCardSlice';
 
 
 const CardList = ({productName,src,price,text1}) => {
+  let dispatch = useDispatch() 
+
+  let handleAddtoCard =()=> {
+    dispatch(
+      addToCard({
+        title : productName,
+        price : Number(price),
+        image : src,
+        quantity : Number(1),
+      })
+    )
+  }
+
   return (
     <section>
         <div className='w-full relative group overflow-hidden hover:bg-[#f0f0f0] cursor-pointer duration-200 '>
@@ -30,7 +45,7 @@ const CardList = ({productName,src,price,text1}) => {
                   <li className='flex items-center gap-x-3 font-DM text-[16px]'>
                     Compare <TfiReload />
                   </li>
-                  <li className='flex items-center gap-x-3 font-DM text-[16px] font-bold'>
+                  <li onClick={handleAddtoCard} className='flex items-center gap-x-3 font-DM text-[16px] font-bold'>
                     Add to Cart 
                     <MdShoppingCart />
                     </li>

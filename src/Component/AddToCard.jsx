@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Flex from './Flex'
 import Image from './Image'
 import { RxCross2 } from 'react-icons/rx'
@@ -7,14 +7,36 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { removeItem } from '../Slices/addToCardSlice'
 
-const AddToCard = ({src}) => { 
+const AddToCard = ({showCard, onClose}) => { 
+
+    if (!showCard) return null;
      let cardItem = useSelector((state)=>state.addtocard.cardObj)   
      const [total, setTotal] = useState(0);    
+
      let dispatch = useDispatch()
      
      let cardRemove =(item)=> {
         dispatch(removeItem(item))
      }
+     
+      
+
+     const cardRef = useRef()
+
+     useEffect(() => {
+        const handleClickOutside = (event) => {
+        if (cardRef.current && !cardRef.current.contains(event.target)) {
+            onClose()
+        }
+        }
+
+        document.addEventListener('mousedown', handleClickOutside)
+        return () => {
+        document.removeEventListener('mousedown', handleClickOutside)    
+        }
+
+    }, [onClose])
+
      useEffect(()=> {
             let total= 0
      cardItem.map(item=>{ total += item.quantity*item.price}) 
@@ -23,7 +45,10 @@ const AddToCard = ({src}) => {
      )
      
   return (
-    <div className='bg-[#F0F0F0] absolute top-8 right-0 w-[360px] h-auto z-10 '>
+   
+    
+        showCard && (
+             <div ref={cardRef} className='bg-[#F0F0F0] absolute top-8 right-0 w-[360px] h-auto z-10 '>
            
         { cardItem.length > 0 ? 
             <>
@@ -55,7 +80,7 @@ const AddToCard = ({src}) => {
                 
                 <Flex className='ml-5 mb-3 mt-7'>
                     <p className='font-DM font-normal text-[16px] mr-2 text-[#767676]'>Subtotal : </p>
-                    <p className='font-DM font-normal text-[16px] '>{total}</p>
+                    <p className='font-DM font-normal text-[16px] '>{total.toFixed(2)}</p>
                 </Flex>
 
                 <Flex className='gap-x-5 items-center justify-center mb-5'>
@@ -66,6 +91,9 @@ const AddToCard = ({src}) => {
                 </Flex>
                                                                                               
     </div>
+        )
+    
+
   )
 }
 

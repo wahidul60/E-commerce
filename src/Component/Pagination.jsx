@@ -5,23 +5,16 @@ import data from '../data'
 import Flex from './Flex';
 import axios from 'axios';
 
-const items = data;
 
-function Items({ currentItems }) {
-  
-  useEffect (()=> {
-    let allData = async()=> {
-      let data = await axios.get('https://dummyjson.com/products')
-    }; allData()
-  }, [])
-  
+
+function Items({ currentItems }) {   
   return (
     <>
       <div className='flex flex-wrap gap-y-5 gap-x-2 justify-between'>
         {currentItems &&
-        currentItems.map((item) => (
-          <div key={item.id}>
-            <Card  src={item.image} price = {item.price} productName={item.title} text1='new'/>
+        currentItems.map((Item) => (
+          <div key={Item.id}>
+            <Card  src={Item.thumbnail} price = {Item.price} productName={Item.title} text1='new'/>
           </div>
         ))}
       </div>
@@ -31,11 +24,24 @@ function Items({ currentItems }) {
 
 function Pagination({ itemsPerPage }) { 
   const [itemOffset, setItemOffset] = useState(0); 
+  let [Item, setItem] = useState([])
+
+   useEffect (()=> {
+    let allData = async()=> {
+      try {
+        let data = await axios.get('https://dummyjson.com/products');
+        setItem(data.data.products);
+      } catch (error) {
+        console.error("Api fetch error:", error)
+      }
+    }; allData()
+  }, [])
+
   const endOffset = itemOffset + itemsPerPage; 
-  const currentItems = items.slice(itemOffset, endOffset);
-  const pageCount = Math.ceil(items.length / itemsPerPage);  
+  const currentItems = Item.slice(itemOffset, endOffset);
+  const pageCount = Math.ceil(Item.length / itemsPerPage);  
   const handlePageClick = (event) => {
-    const newOffset = (event.selected * itemsPerPage) % items.length;
+    const newOffset = (event.selected * itemsPerPage) % Item.length;
     console.log(
       `User requested page number ${event.selected}, which is offset ${newOffset}`
     );
@@ -63,7 +69,7 @@ function Pagination({ itemsPerPage }) {
         activeLinkClassName="!bg-[#262626] !text-white"
         />
         </div>
-        <p className='text-[16px] font-DM font-normal text-[#767676] '>Products from {itemOffset+1} to {endOffset<data.length?endOffset:data.length} of {data.length}</p>
+        <p className='text-[16px] font-DM font-normal text-[#767676] '>Products from {itemOffset+1} to {endOffset<Item.length?endOffset:Item.length} of {Item.length}</p>
       </Flex>
     </>
   );
