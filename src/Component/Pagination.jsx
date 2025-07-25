@@ -10,7 +10,7 @@ import axios from 'axios';
 function Items({ currentItems }) {   
   return (
     <>
-      <div className='flex flex-wrap gap-y-5 gap-x-2 justify-between'>
+      <div className='flex flex-wrap gap-y-2 gap-x-2 justify-between'>
         {currentItems &&
         currentItems.map((Item) => (
           <div key={Item.id}>

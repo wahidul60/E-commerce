@@ -20,14 +20,14 @@ const Card = ({productName,src,price,text1}) => {
   }
   return (
     <section>
-        <div className='w-[300px] relative group overflow-hidden hover:scale-[1.03] duration-200'>
-            <Image src={src} className='w-full h-[300px] mb-6 border border-[#f0f0f0]'/>
+        <div className='w-[300px] relative group overflow-hidden hover:scale-[1.03] duration-200 border border-[#f0f0f0]'>
+            <Image src={src} className='w-full h-[300px] mb-6  border border-[#f0f0f0]'/>
             <Flex className='justify-between items-center pb-4 '>
-                <Link to={`/product/${productName}`}><h1 className='font-DM text-[20px] text-[#262626] font-bold '>{productName}</h1></Link>
-                <h1 className='font-DM text-[16px] text-[#6D6D6D]'>$ {price} </h1>
+                <Link to={`/product/${productName}`}><h1 className='font-DM text-[20px] text-[#262626] font-bold pl-1'>{productName.substring(0,15)+" ..."}  </h1></Link>
+                <h1 className='font-DM text-[16px] text-[#6D6D6D] pr-1'>$ {price} </h1>
             </Flex>
 
-            <h3 className='font-DM text-[16px] text-[#6D6D6D]'>Black</h3>
+            <h3 className='font-DM text-[16px] text-[#6D6D6D] pl-1'>Black</h3>
             <div className='bg-black w-[100px] h-[35px] absolute top-[20px] left-[20px] justify-center items-center flex'>
                 <p className='text-white px-2 py-2 font-DM text-[16px] font-bold'>{text1}</p>
             </div>
