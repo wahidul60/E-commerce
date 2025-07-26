@@ -29,6 +29,7 @@ const Home = () => {
 
   let [data, setData] = useState([])
   
+  
   useEffect(()=> {
    async function allData(){
       let data = await axios.get('https://dummyjson.com/products')
