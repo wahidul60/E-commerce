@@ -9,29 +9,29 @@ import { FaAngleRight } from 'react-icons/fa6'
 import { Link } from 'react-router-dom'
 
 const Contacts = () => {
-  let previousValue = useSelector((state)=>state.active.previousValue)
-  let currentValue = useSelector((state)=> state.active.currentValue)
+  let previousValue = useSelector((state) => state.active.previousValue)
+  let currentValue = useSelector((state) => state.active.currentValue)
 
   return (
     <section>
       <Container>
-        <Heading className='pt-[124px] pb-3' text='Contacts'/>
+        <Heading className='pt-[124px] pb-3' text='Contacts' />
         <Flex className='gap-x-2 text-[#767676] font-DM pb-[125px] items-center'>
-        <p> <Link to = {previousValue=="Home"? "/": `/${previousValue?.toLowerCase()}`}>{!previousValue || previousValue === currentValue? previousValue="Home" : previousValue }</Link> </p> <span><FaAngleRight/></span> <p>{currentValue || 'Contact' }</p>
+          <p> <Link to={previousValue == "Home" ? "/" : `/${previousValue?.toLowerCase()}`}>{!previousValue || previousValue === currentValue ? previousValue = "Home" : previousValue}</Link> </p> <span><FaAngleRight /></span> <p>{currentValue || 'Contact'}</p>
         </Flex>
-        <Heading text='Fill up a Form' className='pb-10'/>
-         <label className='pb-4 block border-b border-[#f0f0f0] w-1/2' htmlFor='name'> <SubHeading  text='Name:'/> 
-                <input className='text-[#767676] font-DM text-[10px] p-1 rounded' id='name' placeholder='Enter your name here'></input>
-             </label>
-              
-             <label className='pb-4 block border-b border-[#f0f0f0] pt-5 w-1/2' htmlFor='email'> <SubHeading  text='Email:'/> 
-                <input className='text-[#767676] font-DM text-[10px] p-1 rounded' id='email' placeholder='Enter your email here'></input>
-             </label> 
+        <Heading text='Fill up a Form' className='pb-10' />
+        <label className='pb-4 block border-b border-[#f0f0f0] w-1/2' htmlFor='name'> <SubHeading text='Name:' />
+          <input className='text-[#767676] font-DM text-[10px] p-1 rounded' id='name' placeholder='Enter your name here'></input>
+        </label>
 
-             <label className='pb-4 block border-b border-[#020202] pt-5 w-1/2' htmlFor='review'> <SubHeading  text='Message:'/> 
-                <textarea id="review" rows="10" cols="100" className='text-[#767676] font-DM text-[10px] p-1 rounded' placeholder='Enter your message here'></textarea>
-             </label> 
-             <div className='pt-4 pb-[140px]'><Button text='Post'/></div>
+        <label className='pb-4 block border-b border-[#f0f0f0] pt-5 w-1/2' htmlFor='email'> <SubHeading text='Email:' />
+          <input className='text-[#767676] font-DM text-[10px] p-1 rounded' id='email' placeholder='Enter your email here'></input>
+        </label>
+
+        <label className='pb-4 block border-b border-[#020202] pt-5 w-1/2' htmlFor='review'> <SubHeading text='Message:' />
+          <textarea id="review" rows="10" cols="100" className='text-[#767676] font-DM text-[10px] p-1 rounded' placeholder='Enter your message here'></textarea>
+        </label>
+        <div className='pt-4 pb-[140px]'><Button text='Post' /></div>
         <div className="flex justify-center items-center pb-[100px]">
           <iframe
             className="w-[1000px] h-[400px]"

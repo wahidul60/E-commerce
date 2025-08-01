@@ -1,26 +1,26 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-export const categorySlice = createSlice ({
+export const categorySlice = createSlice({
     name: 'category',
     initialState: {
-        openCategories : {}
+        openCategories: {}
     },
     reducers: {
-        toggleCategory: (state, action) => {            
-             const name=action.payload
-             state.openCategories[name] = !state.openCategories[name]
-           
-           {/*Spread Toggle
+        toggleCategory: (state, action) => {
+            const name = action.payload
+            state.openCategories[name] = !state.openCategories[name]
+
+            {/*Spread Toggle
             const name = action.payload
             const prevState = state.openCategories
             state.openCategories = {
                 ...prevState,
-                [name]: !prevState[name]*/} 
-            
+                [name]: !prevState[name]*/}
+
         }
     }
 })
 
-export const {toggleCategory} = categorySlice.actions
+export const { toggleCategory } = categorySlice.actions
 export default categorySlice.reducer
 

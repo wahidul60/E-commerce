@@ -27,83 +27,86 @@ import axios from 'axios'
 
 const Home = () => {
 
+  useEffect(() => {
+    window.scrollTo({ top: 0 })
+  })
   let [data, setData] = useState([])
-  
-  
-  useEffect(()=> {
-   async function allData(){
+
+
+  useEffect(() => {
+    async function allData() {
       let data = await axios.get('https://dummyjson.com/products')
       setData(data.data.products)
-    } 
+    }
     allData()
-  },[])
-  
- 
-        const settings = {
-        dots: false,
-        infinite: true,
-        slidesToShow: 4,
-        slidesToScroll: 1,
-        autoplay: true,
-        speed: 5000,
-        autoplaySpeed: 0,
-        cssEase: "linear",        
+  }, [])
+
+
+  const settings = {
+    dots: false,
+    infinite: true,
+    slidesToShow: 5,
+    slidesToScroll: 1,
+    autoplay: true,
+    speed: 5000,
+    autoplaySpeed: 0,
+    cssEase: "linear",
   };
-   const Bestsellers = {
-        infinite: true,
-        slidesToShow: 4,
-        slidesToScroll: 1,
-        speed: 500,
-        nextArrow : <NexArrow/> ,
-        prevArrow : <PrevArrow />        
+  const Bestsellers = {
+    infinite: true,
+    slidesToShow: 5,
+    slidesToScroll: 1,
+    speed: 500,
+    nextArrow: <NexArrow />,
+    prevArrow: <PrevArrow />
   };
   return (
-    
+
     <div>
-      <Banner/>
-      <Information/>
-      <Ads/>
-      <Container>        
-        <Heading text='New Arrivals' className='pb-12'/>    
+      <Banner />
+      <Information />
+      <Ads />
+      <Container>
+        <Heading text='New Arrivals' className='pb-12' />
         <div className="slider-container">
-        <Slider {...settings}>
-            
+          <Slider {...settings}>
+
             {
-              data.map(item=>(
-                <Card 
-                  src= {item.thumbnail}  productName= {item.title} price= {item.price} text1='New' />
+              data.map(item => (
+                <Card
+                  src={item.thumbnail} productName={item.title} price={item.price} text1='New' />
               ))
             }
-            
-        </Slider>
-        </div>      
-        <Flex className='gap-x-10 justify-between pb-[118px]'>             
+
+          </Slider>
+        </div>
+        <Flex className='gap-x-10 justify-between pb-[118px]'>
         </Flex>
-        <Heading text='Our Bestsellers' className='pb-12'/>       
-        <Slider {...Bestsellers} className='pb-[118px]' >     
-            
-            {
-               data.map(item=>(                
-                <Card src={item.thumbnail} productName={item.title}  price= {item.price} text1='New' />
-              ))
-            }
-            
-           
-        </Slider>      
+        <Heading text='Our Bestsellers' className='pb-12' />
+        <Slider {...Bestsellers} className='pb-[118px]' >
+
+          {
+            data.map(item => (
+              <Card src={item.thumbnail} productName={item.title} price={item.price} text1='New' />
+            ))
+          }
+
+
+        </Slider>
         <div className='relative pb-[128px]'>
-          <Image src={Ad4} className='w-[1673px] h-auto'/>
+          <Image src={Ad4} className='w-[1673px] h-auto' />
           <div className='absolute top-[61px] left-[700px]'>
-            <Heading text='Phone of the year' className='pb-[38px]'/>
+            <Heading text='Phone of the year' className='pb-[38px]' />
             <p className='w-[513px] pb-[50px]'>Lorem Ipsum is simply dummy text of the printing and typesetting industry orem Ipsum..</p>
-            <Button text='Shop Now'/>
+            <Button text='Shop Now' />
           </div>
         </div>
-        <Heading text='Special Offers' className='pb-[48px]'/>
+        <Heading text='Special Offers' className='pb-[48px]' />
         <Flex className='gap-x-10 justify-between pb-[118px]'>
           <Card src={CardImage9} productName='Basic Crew Neck Tee' price={44} text1='New' />
-          <Card src={CardImage10} productName='Basic Crew Neck Tee' price={44} text1='New'/>
-          <Card src={CardImage11} productName='Basic Crew Neck Tee' price={44} text1='New'/>
-          <Card src={CardImage12} productName='Basic Crew Neck Tee' price={44} text1='New'/>
+          <Card src={CardImage10} productName='Basic Crew Neck Tee' price={44} text1='New' />
+          <Card src={CardImage11} productName='Basic Crew Neck Tee' price={44} text1='New' />
+          <Card src={CardImage12} productName='Basic Crew Neck Tee' price={44} text1='New' />
         </Flex>
       </Container>
     </div>
