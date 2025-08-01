@@ -93,16 +93,16 @@ const Home = () => {
 
 
         </Slider>
-        <div className='relative pb-[128px]'>
-          <Image src={Ad4} className='w-[1673px] h-auto' />
-          <div className='absolute top-[61px] left-[700px]'>
+        <div className='relative pb-[128px] w-100% max-w-container h-auto mx-auto px-5'>
+          <Image src={Ad4} className='' />
+          <div className='absolute max-sm:relative max-sm:top-0 max-sm:left-0 top-[61px] left-[700px] w-100% max-w-container h-auto mx-auto px-5'>
             <Heading text='Phone of the year' className='pb-[38px]' />
-            <p className='w-[513px] pb-[50px]'>Lorem Ipsum is simply dummy text of the printing and typesetting industry orem Ipsum..</p>
+            <p className='w-full pb-[50px]'>Lorem Ipsum is simply dummy text of the printing and typesetting industry orem Ipsum..</p>
             <Button text='Shop Now' />
           </div>
         </div>
         <Heading text='Special Offers' className='pb-[48px]' />
-        <Flex className='gap-x-10 justify-between pb-[118px]'>
+        <Flex className='gap-x-10 justify-between pb-[118px] flex-wrap'>
           <Card src={CardImage9} productName='Basic Crew Neck Tee' price={44} text1='New' />
           <Card src={CardImage10} productName='Basic Crew Neck Tee' price={44} text1='New' />
           <Card src={CardImage11} productName='Basic Crew Neck Tee' price={44} text1='New' />

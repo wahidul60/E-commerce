@@ -33,7 +33,7 @@ const TopBar = ({showCard}) => {
                     </Flex> 
                 </div>
                 <div className='w-8/16 relative'>
-                    <input type="text" className='w-full bg-white font-DM font-normal text-[14px] px-3 py-4 mx-5 my-6 rounded' placeholder='Search Products' />
+                    <input type="text" className='w-full max-sm:w-[80%] bg-white font-DM font-normal text-[14px] max-sm:p-0 max-sm:m-0 px-3 py-4 mx-5 my-6 rounded' placeholder='Search Products' />
                     <div className='absolute top-1/2 right-0 -translate-x-1/2'><IoMdSearch /></div>
                 </div>
                 <div className='w-4/16 '>
