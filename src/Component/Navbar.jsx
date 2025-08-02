@@ -29,8 +29,8 @@ const Navbar = () => {
             <div className='w-4/12  max-sm:w-6/12' > <Link to='/'><Image src={Logo} /></Link>
               {
                 show &&
-                <div className='max-sm:w-full max-sm:top-0 max-sm:left-0 bg-white absolute z-10 h-screen max-sm:inline-block hidden '>
-                  <Flex className='justify-center items-center flex-col mx-auto px-auto' >
+                <div className='max-sm:w-full max-sm:h-full max-sm:top-0 max-sm:left-0 bg-white fixed z-10 h-screen max-sm:inline-block hidden '>
+                  <Flex className='justify-center items-center flex-col mx-auto px-auto z-11' >
                     <Flex className='top-2 py-8 w-full '>
                       <div className='w-6/12  max-sm:w-1/2 ml-5' > <Link to='/'><Image src={Logo} /></Link></div>
                       <div onClick={handleMenuBar} className='mr-5 max-sm:w-1/2 max-sm:flex hidden max-sm:justify-end'><RxCross2 /></div>

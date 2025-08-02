@@ -16,12 +16,12 @@ import CardImage12 from '../assets/CardImage12.png'
 import Ad4 from '../assets/Ad4.png'
 import Image from '../Component/Image'
 import Button from '../Component/Button'
-import "slick-carousel/slick/slick.css";
 import Slider from "react-slick";
 import PrevArrow from '../Component/PrevArrow'
 import NexArrow from '../Component/NexArrow'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
+
 
 
 
@@ -46,20 +46,78 @@ const Home = () => {
     dots: false,
     infinite: true,
     slidesToShow: 5,
-    slidesToScroll: 1,
-    autoplay: true,
-    speed: 5000,
+    slidesToScroll: 5,
+    autoplay: false,
+    speed: 500,
     autoplaySpeed: 0,
     cssEase: "linear",
+    nextArrow: <NexArrow />,
+    prevArrow: <PrevArrow />,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
   };
+
   const Bestsellers = {
     infinite: true,
     slidesToShow: 5,
-    slidesToScroll: 1,
+    slidesToScroll: 5,
     speed: 500,
     nextArrow: <NexArrow />,
-    prevArrow: <PrevArrow />
+    prevArrow: <PrevArrow />,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
+  
+
   };
+
   return (
 
     <div>

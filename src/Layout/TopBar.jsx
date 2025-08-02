@@ -23,7 +23,7 @@ const TopBar = ({ showCard }) => {
         setCard(!card)
     }
     return (
-        <section className='bg-[#e4e4e4] w-full'>
+        <section className='bg-[#e4e4e4] w-full sticky z-5 top-0 shadow'>
             <Container>
                 <div className='bg-[#e4e4e4] w-full max-sm:hidden'>
 
