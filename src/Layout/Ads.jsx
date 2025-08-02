@@ -10,7 +10,7 @@ const Ads = () => {
   return (
     <section>
         <Container>
-            <Flex className='pt-[104px] pb-[128px] justify-between'>
+            <Flex className='pt-[104px] max-sm:py-7 pb-[128px] justify-between max-sm:flex-col'>
                 <div><Image src={Ad1} className='cursor-pointer'/></div>
                 <div>
                     <div className='pb-[30px]'><Image src={Ad2} className='cursor-pointer'/></div>
