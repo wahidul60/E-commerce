@@ -41,7 +41,7 @@ const Footer = () => {
                 </div> 
                 <div className='w-3/12'> 
                     <SubHeading text='(052) 611-5711'/>
-                    <SubHeading text='company@domain.com'/>
+                    <SubHeading text='compa'/>
                     <p className='text-DM font-[500] text-[14px] text-[#767676]'>575 Crescent Ave. Quakertown, PA 18951</p>                                           
                 </div> 
                 <div className='w-3/12'>
